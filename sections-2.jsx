@@ -1,0 +1,763 @@
+// sections-2.jsx — Itinerary, Tiers, Included, Gallery, Testimonials, About, Permits, FAQ, Booking, Footer
+
+// ============================================================
+// ITINERARY (Adi Kailash featured, 8 days)
+// ============================================================
+const ITINERARY = [
+  { d: "Day 01", title: "Pickup → Dharchula", elev: "915 m", body: "Morning pickup. We drive through the Kumaon foothills — Almora, Pithoragarh — to the riverside town of Dharchula. Briefing & gear check by the Kali river." },
+  { d: "Day 02", title: "Dharchula → Gunji", elev: "3,200 m", body: "A spectacular drive through the Vyas Valley. Tea at Tawaghat, lunch at Budi. Light acclimatisation walk in Gunji village in the evening." },
+  { d: "Day 03", title: "Gunji → Adi Kailash darshan → Jolingkong", elev: "4,572 m", body: "Drive to Jolingkong via Kuti. Darshan at Parvati Sarovar at the base of Adi Kailash. Return to Gunji by evening." },
+  { d: "Day 04", title: "Gunji → Om Parvat (Nabhidhang)", elev: "4,150 m", body: "The day. We drive to Nabhidhang for the snow-carved ॐ on Om Parvat. Time to sit, breathe, and witness. Return to Gunji." },
+  { d: "Day 05", title: "Reserve / weather buffer", elev: "3,200 m", body: "A built-in spare day for weather, photography, or a side-walk to Kalapani / Nabhi village. Vital for high-altitude expeditions." },
+  { d: "Day 06", title: "Gunji → Dharchula", elev: "915 m", body: "Long descent day. We retrace the Vyas Valley with a celebratory dinner at Dharchula." },
+  { d: "Day 07", title: "Dharchula → Pithoragarh", elev: "1,514 m", body: "Easy drive across the lower hills. Time for shopping in Pithoragarh — local thulma blankets, copper, beans of Munsiyari." },
+  { d: "Day 08", title: "Departure", elev: "—", body: "Drop at your departure point — Pithoragarh / Kathgodam / Delhi as per package." },
+];
+
+const Itinerary = () => (
+  <section className="section bg-dawn" id="itinerary" data-screen-label="Itinerary">
+    <div className="wrap">
+      <Reveal>
+        <div style={{ marginBottom: 56, display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 28 }}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: 14 }}>Day-by-day · Adi Kailash &amp; Om Parvat</div>
+            <h2 className="display" style={{ fontSize: "clamp(32px, 4vw, 50px)", margin: 0, maxWidth: 700 }}>
+              Eight days. One mountain that will look back at you.
+            </h2>
+          </div>
+          <div className="row" style={{ gap: 8 }}>
+            <span className="chip"><i className="fa-solid fa-calendar-days" style={{ fontSize: 13 }} /> May–Oct</span>
+            <span className="chip"><i className="fa-solid fa-users" style={{ fontSize: 13 }} /> Max 12</span>
+            <span className="chip"><i className="fa-solid fa-shield-halved" style={{ fontSize: 13 }} /> ILP included</span>
+          </div>
+        </div>
+      </Reveal>
+
+      <div style={{ position: "relative", paddingLeft: 40 }}>
+        <div style={{ position: "absolute", left: 16, top: 8, bottom: 8, width: 1, background: "var(--line-2)" }} />
+        {ITINERARY.map((day, i) => (
+          <Reveal delay={i * 60} key={day.d}>
+            <div className="itinerary-row" style={{ position: "relative", paddingBottom: 28 }}>
+              <div
+                style={{
+                  position: "absolute",
+                  left: -32,
+                  top: 8,
+                  width: 14,
+                  height: 14,
+                  borderRadius: "50%",
+                  background: "var(--alpen)",
+                  boxShadow: "0 0 0 4px var(--cream), 0 0 0 5px var(--line-2)",
+                }}
+              />
+              <div className="itinerary-meta">
+                <div className="mono" style={{ fontSize: 12, color: "var(--alpen-deep)", fontWeight: 600 }}>{day.d}</div>
+                <div className="metric__label" style={{ marginTop: 6 }}>{day.elev}</div>
+              </div>
+              <div className="card" style={{ padding: 22 }}>
+                <div className="display" style={{ fontSize: 21, fontWeight: 700, marginBottom: 6 }}>{day.title}</div>
+                <p style={{ color: "var(--ink-soft)", fontSize: 14.5, lineHeight: 1.65, margin: 0 }}>{day.body}</p>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ============================================================
+// TIERS — Comfort vs Premium
+// ============================================================
+const Tiers = ({ onInquire }) => {
+  const rows = [
+    ["Group size", "Up to 12 trekkers", "Up to 6 trekkers"],
+    ["Stay", "Clean guesthouses, twin-share", "Best-available, mostly single-share"],
+    ["Vehicle", "Shared 4×4 / Tempo Traveller", "Private SUV per group"],
+    ["Meals", "Local Kumaoni vegetarian", "Curated · with chef on long days"],
+    ["Guide", "Senior trek leader", "Trek leader + dedicated photographer"],
+    ["Reserve days", "1 weather buffer", "2 weather buffers"],
+    ["Permits & paperwork", "Included", "Included + handled door-to-door"],
+  ];
+  const cols = [
+    { name: "Comfort", sub: "Our default. Honest, well-run, joyful.", price: "from ₹ 28,500", color: "var(--ink)" },
+    { name: "Premium", sub: "Smaller groups, more flexibility, more time.", price: "from ₹ 48,500", color: "var(--alpen)" },
+  ];
+  return (
+    <section className="section" id="tiers" data-screen-label="Tiers" style={{ paddingTop: 32 }}>
+      <div className="wrap">
+        <Reveal>
+          <div style={{ marginBottom: 40, maxWidth: 720 }}>
+            <div className="eyebrow" style={{ marginBottom: 14 }}>Packages</div>
+            <h2 className="display" style={{ fontSize: "clamp(28px, 3.4vw, 42px)", margin: 0 }}>
+              Two ways to walk the same trail.
+            </h2>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="card" style={{ overflow: "hidden" }}>
+            <div className="tiers-table">
+              {/* Header row */}
+              <div className="tiers-row tiers-row--header">
+                <div className="tiers-cell tiers-cell--label" style={{ padding: "24px 26px", borderBottom: "1px solid var(--line)" }}>
+                  <div className="metric__label">Compare</div>
+                </div>
+                {cols.map((c) => (
+                  <div
+                    key={c.name}
+                    className={`tiers-cell tiers-cell--${c.name.toLowerCase()}`}
+                    style={{
+                      padding: "24px 26px",
+                      borderBottom: "1px solid var(--line)",
+                      borderLeft: "1px solid var(--line)",
+                      background: c.name === "Premium" ? "var(--cream-2)" : "transparent",
+                    }}
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 6 }}>
+                      <span className="display" style={{ fontSize: 22, fontWeight: 700 }}>{c.name}</span>
+                      {c.name === "Premium" && (
+                        <span style={{ fontSize: 10, fontWeight: 700, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--alpen-deep)", padding: "2px 8px", borderRadius: 999, background: "rgba(224,119,60,0.12)" }}>
+                          Most loved
+                        </span>
+                      )}
+                    </div>
+                    <div style={{ fontSize: 13, color: "var(--ink-soft)", marginBottom: 10 }}>{c.sub}</div>
+                    <div className="mono" style={{ color: c.color, fontWeight: 700 }}>{c.price}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Data rows */}
+              {rows.map(([label, a, b], i) => (
+                <div key={label} className="tiers-row tiers-row--data">
+                  <div className="tiers-cell tiers-cell--label" style={{ padding: "16px 26px", color: "var(--ink-2)", fontSize: 14, borderBottom: i < rows.length - 1 ? "1px solid var(--line)" : "none" }}>{label}</div>
+                  <div className="tiers-cell tiers-cell--comfort" style={{ padding: "16px 26px", color: "var(--ink-2)", fontSize: 14, borderLeft: "1px solid var(--line)", borderBottom: i < rows.length - 1 ? "1px solid var(--line)" : "none" }}>{a}</div>
+                  <div className="tiers-cell tiers-cell--premium" style={{ padding: "16px 26px", color: "var(--ink-2)", fontSize: 14, borderLeft: "1px solid var(--line)", borderBottom: i < rows.length - 1 ? "1px solid var(--line)" : "none", background: "var(--cream-2)" }}>{b}</div>
+                </div>
+              ))}
+
+              {/* Footer row */}
+              <div className="tiers-row tiers-row--footer">
+                <div className="tiers-cell tiers-cell--label" style={{ padding: 26 }}></div>
+                <div className="tiers-cell tiers-cell--comfort" style={{ padding: 26, borderLeft: "1px solid var(--line)" }}>
+                  <button className="btn btn--ghost" style={{ width: "100%", justifyContent: "center" }} onClick={onInquire}>Choose Comfort</button>
+                </div>
+                <div className="tiers-cell tiers-cell--premium" style={{ padding: 26, borderLeft: "1px solid var(--line)", background: "var(--cream-2)" }}>
+                  <button className="btn btn--alpen" style={{ width: "100%", justifyContent: "center" }} onClick={onInquire}>Choose Premium</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+// ============================================================
+// INCLUDED / NOT INCLUDED
+// ============================================================
+const Included = () => {
+  const yes = [
+    "Inner Line Permits & all paperwork",
+    "Accommodation (twin-share guesthouses & tents)",
+    "All meals from Day 1 dinner to Day 8 breakfast",
+    "Private 4×4 / Tempo Traveller transfers",
+    "Senior trek leader + local Bhotia guide",
+    "Basic first-aid & oxygen cylinder on standby",
+    "Welcome kit · prayer flags · trip diary",
+  ];
+  const no = [
+    "Train / flight to Pickup City",
+    "Personal trekking gear (shoes, jackets)",
+    "Pony / porter for personal luggage",
+    "Travel insurance (strongly recommended)",
+    "Anything not in the inclusions list",
+    "Costs from delays caused by weather / road closures",
+  ];
+  return (
+    <section className="section bg-snow" id="included" data-screen-label="Included" style={{ paddingTop: 40 }}>
+      <div className="wrap">
+        <Reveal>
+          <div className="eyebrow" style={{ marginBottom: 14 }}>What's in the price</div>
+          <h2 className="display" style={{ fontSize: "clamp(28px, 3.4vw, 42px)", margin: "0 0 40px", maxWidth: 700 }}>
+            Honest inclusions. No surprises at altitude.
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-2">
+          <Reveal>
+            <div className="card" style={{ padding: 28 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+                <span style={{ width: 28, height: 28, borderRadius: 8, background: "rgba(47,93,79,0.12)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--pine)" }}>
+                  <i className="fa-solid fa-check" style={{ fontSize: 16 }} />
+                </span>
+                <span className="display" style={{ fontSize: 22, fontWeight: 700 }}>Included</span>
+              </div>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                {yes.map((x) => (
+                  <li key={x} style={{ display: "flex", gap: 10, alignItems: "flex-start", color: "var(--ink-2)", fontSize: 14.5 }}>
+                    <span style={{ color: "var(--pine)", marginTop: 2 }}><i className="fa-solid fa-check" style={{ fontSize: 14 }} /></span>
+                    {x}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="card" style={{ padding: 28, background: "var(--cream)" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+                <span style={{ width: 28, height: 28, borderRadius: 8, background: "rgba(184,90,38,0.14)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--alpen-deep)" }}>
+                  <i className="fa-solid fa-xmark" style={{ fontSize: 16 }} />
+                </span>
+                <span className="display" style={{ fontSize: 22, fontWeight: 700 }}>Not included</span>
+              </div>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 12 }}>
+                {no.map((x) => (
+                  <li key={x} style={{ display: "flex", gap: 10, alignItems: "flex-start", color: "var(--ink-2)", fontSize: 14.5 }}>
+                    <span style={{ color: "var(--alpen-deep)", marginTop: 2 }}><i className="fa-solid fa-xmark" style={{ fontSize: 14 }} /></span>
+                    {x}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ============================================================
+// GALLERY (tabs by 5 destinations)
+// ============================================================
+const GalleryCarousel = ({ photos, destName }) => {
+  const [slide, setSlide] = React.useState(0);
+  const touchStart = React.useRef(null);
+  const total = photos.length;
+
+  const prev = () => setSlide((s) => (s - 1 + total) % total);
+  const next = () => setSlide((s) => (s + 1) % total);
+
+  const onTouchStart = (e) => { touchStart.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchStart.current === null) return;
+    const delta = touchStart.current - e.changedTouches[0].clientX;
+    if (Math.abs(delta) > 40) delta > 0 ? next() : prev();
+    touchStart.current = null;
+  };
+
+  React.useEffect(() => { setSlide(0); }, [destName]);
+
+  return (
+    <div className="gallery-carousel">
+      <div
+        className="gallery-carousel__track"
+        style={{ transform: `translateX(-${slide * 100}%)` }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        {photos.map((src, i) => (
+          <div key={i} className="gallery-carousel__slide">
+            <Photo src={src} alt={`${destName} photo ${i + 1}`} style={{ height: "100%", borderRadius: 14 }} />
+          </div>
+        ))}
+      </div>
+      <div className="gallery-carousel__dots">
+        {photos.map((_, i) => (
+          <button
+            key={i}
+            className={`gallery-carousel__dot${i === slide ? " is-active" : ""}`}
+            onClick={() => setSlide(i)}
+            aria-label={`Photo ${i + 1}`}
+          />
+        ))}
+      </div>
+      <button className="gallery-carousel__arrow gallery-carousel__arrow--prev" onClick={prev} aria-label="Previous">&#8249;</button>
+      <button className="gallery-carousel__arrow gallery-carousel__arrow--next" onClick={next} aria-label="Next">&#8250;</button>
+    </div>
+  );
+};
+
+const Gallery = () => {
+  const [active, setActive] = React.useState(DESTINATIONS[0].id);
+  const dest = DESTINATIONS.find((d) => d.id === active);
+  const galleryPhotos = [
+    PHOTOS[active] || PHOTOS.g1,
+    PHOTOS.g2,
+    PHOTOS.g3,
+    PHOTOS.g4,
+    PHOTOS.g5,
+  ];
+  return (
+    <section className="section bg-dawn" id="gallery" data-screen-label="Gallery">
+      <div className="wrap">
+        <Reveal>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 32, flexWrap: "wrap", gap: 24 }}>
+            <div>
+              <div className="eyebrow" style={{ marginBottom: 14 }}>From the trail</div>
+              <h2 className="display" style={{ fontSize: "clamp(28px, 3.4vw, 42px)", margin: 0 }}>
+                Photographs from past yatras.
+              </h2>
+            </div>
+            <p className="text-muted" style={{ maxWidth: 360 }}>
+              Filter by trail. All photos are from our own expeditions — not stock.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div className="tabs" style={{ marginBottom: 24 }}>
+            {DESTINATIONS.map((d) => (
+              <button
+                key={d.id}
+                className={`tab ${active === d.id ? "is-active" : ""}`}
+                onClick={() => setActive(d.id)}
+              >
+                {d.name}
+              </button>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal key={active}>
+          {/* Desktop grid */}
+          <div className="gallery-grid">
+            <Photo src={PHOTOS[active] || PHOTOS.g1} alt={`${dest.name} feature`} style={{ gridRow: "1 / 3", height: "100%", borderRadius: 14 }} />
+            <Photo src={PHOTOS.g2} alt={`${dest.name} 02`} style={{ height: "100%", borderRadius: 14 }} />
+            <Photo src={PHOTOS.g3} alt={`${dest.name} 03`} style={{ height: "100%", borderRadius: 14 }} />
+            <Photo src={PHOTOS.g4} alt={`${dest.name} 04`} style={{ height: "100%", borderRadius: 14 }} />
+            <Photo src={PHOTOS.g5} alt={`${dest.name} 05`} style={{ height: "100%", borderRadius: 14 }} />
+          </div>
+          {/* Mobile carousel */}
+          <GalleryCarousel photos={galleryPhotos} destName={dest.name} />
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
+// ============================================================
+// TESTIMONIALS
+// ============================================================
+const TESTIMONIALS = [
+  { name: "Aarti Menon", from: "Bengaluru · Adi Kailash, 2024", quote: "I've trekked Everest base camp. Nothing prepared me for the silence at Nabhidhang when the ॐ first emerged through the cloud." },
+  { name: "Vikram & Ritu Saxena", from: "Delhi · Premium · 2023", quote: "We were the only ones at Parvati Kund at sunrise. The team had thought of every detail — even the rajma-chawal at base camp tasted like ghar." },
+  { name: "Joshua Pinto", from: "Mumbai · Darma Valley, 2024", quote: "Came for the photography, left with a guide who'd become a friend. Will book again, this time with my parents." },
+];
+
+const Testimonials = () => (
+  <section className="section bg-snow" data-screen-label="Testimonials">
+    <div className="wrap">
+      <Reveal>
+        <div className="eyebrow" style={{ marginBottom: 14 }}>Past yatris</div>
+        <h2 className="display" style={{ fontSize: "clamp(28px, 3.4vw, 42px)", margin: "0 0 48px", maxWidth: 720 }}>
+          What people say after they come down.
+        </h2>
+      </Reveal>
+      <div className="grid grid-3">
+        {TESTIMONIALS.map((t, i) => (
+          <Reveal delay={i * 80} key={t.name}>
+            <div className="card" style={{ padding: 28, height: "100%", display: "flex", flexDirection: "column", gap: 18 }}>
+              <div className="display" style={{ fontSize: 30, color: "var(--alpen)", lineHeight: 1, fontWeight: 700 }}>“</div>
+              <p style={{ fontSize: 15.5, lineHeight: 1.65, color: "var(--ink-2)", margin: 0, flex: 1 }}>
+                {t.quote}
+              </p>
+              <div style={{ paddingTop: 16, borderTop: "1px solid var(--line)" }}>
+                <div style={{ fontWeight: 700, fontSize: 14 }}>{t.name}</div>
+                <div style={{ fontSize: 12.5, color: "var(--ink-soft)" }}>{t.from}</div>
+              </div>
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+// ============================================================
+// ABOUT / FOUNDERS + PERMITS
+// ============================================================
+const About = () => (
+  <section className="section bg-ink" id="about" data-screen-label="About">
+    <div className="wrap">
+      <div className="grid" style={{ gridTemplateColumns: "1fr 1.2fr", gap: 56, alignItems: "center" }}>
+        <Reveal>
+          <Photo
+            src={PHOTOS.founders}
+            alt="Founders"
+            lift
+            style={{ width: "100%", aspectRatio: "4/5", borderRadius: 22 }}
+          />
+        </Reveal>
+        <Reveal delay={100}>
+          <div>
+            <div className="eyebrow" style={{ marginBottom: 14, color: "var(--saffron)" }}>About us</div>
+            <h2 className="display" style={{ fontSize: "clamp(30px, 3.6vw, 46px)", margin: "0 0 22px" }}>
+              We're from these mountains.
+            </h2>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: "rgba(250,246,238,0.78)", marginBottom: 18 }}>
+              Finding Kailash was started by two cousins from Pithoragarh — children of the Vyas Valley who grew up listening to
+              shepherd songs and walking ridge lines to school. We don't outsource. We guide every yatra ourselves, with people we've
+              walked with for twenty years.
+            </p>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: "rgba(250,246,238,0.78)", marginBottom: 28 }}>
+              Our promise is small — small groups, small ego, big care. We'd rather you come back twice than refer us to ten.
+            </p>
+            <div className="row" style={{ gap: 28 }}>
+              <div className="metric"><div className="metric__num" style={{ color: "var(--saffron)" }}>240+</div><div className="metric__label" style={{ color: "rgba(250,246,238,0.6)" }}>Yatras run</div></div>
+              <div className="metric"><div className="metric__num" style={{ color: "var(--saffron)" }}>18</div><div className="metric__label" style={{ color: "rgba(250,246,238,0.6)" }}>Years on these trails</div></div>
+              <div className="metric"><div className="metric__num" style={{ color: "var(--saffron)" }}>4.9</div><div className="metric__label" style={{ color: "rgba(250,246,238,0.6)" }}>From 320+ reviews</div></div>
+            </div>
+          </div>
+        </Reveal>
+      </div>
+    </div>
+  </section>
+);
+
+const Permits = () => {
+  const cards = [
+    { title: "Inner Line Permit", body: "Adi Kailash & Om Parvat fall in a restricted ITBP area. We process the ILP for every trekker — bring an Aadhaar + 2 photos.", icon: "shield" },
+    { title: "Fitness", body: "Moderate. If you can walk 5 km / day on flat ground without distress, we'll prepare you for the rest. Doctor's clearance after 55.", icon: "leaf" },
+    { title: "Gear", body: "We send a complete packing list 30 days before. Layered clothing, broken-in trek shoes, and a 60L backpack are non-negotiable.", icon: "compass" },
+    { title: "Best season", body: "May to mid-October. Monsoon (Jul–Aug) means greener valleys but more landslide risk. Sept–Oct is the clearest sky window.", icon: "calendar" },
+  ];
+  return (
+    <section className="section" id="permits" data-screen-label="Permits">
+      <div className="wrap">
+        <Reveal>
+          <div style={{ marginBottom: 40, maxWidth: 720 }}>
+            <div className="eyebrow" style={{ marginBottom: 14 }}>Before you come</div>
+            <h2 className="display" style={{ fontSize: "clamp(28px, 3.4vw, 42px)", margin: 0 }}>
+              Permits, fitness, gear &amp; season.
+            </h2>
+          </div>
+        </Reveal>
+        <div className="grid grid-4">
+          {cards.map((c, i) => (
+            <Reveal delay={i * 60} key={c.title}>
+              <div className="card" style={{ padding: 24, height: "100%" }}>
+                <span style={{ width: 40, height: 40, borderRadius: 10, background: "var(--cream-2)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--alpen-deep)", marginBottom: 14 }}>
+                  <Icon name={c.icon} size={18} />
+                </span>
+                <div className="display" style={{ fontSize: 18, fontWeight: 700, marginBottom: 8 }}>{c.title}</div>
+                <p style={{ fontSize: 13.5, color: "var(--ink-soft)", lineHeight: 1.6, margin: 0 }}>{c.body}</p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ============================================================
+// FAQ ACCORDION
+// ============================================================
+const FAQS = [
+  { q: "How difficult is the Adi Kailash & Om Parvat trek?", a: "Most of the route is by road — we drive 4×4s up to Jolingkong (4,572 m). The 'trekking' is short walks of 2–4 km/day at altitude. Acclimatisation, not endurance, is the real challenge." },
+  { q: "Do I need to be a Hindu to do this yatra?", a: "Not at all. We host trekkers of every faith and many of none. The mountain doesn't ask for credentials. The journey is open to anyone who walks it with respect." },
+  { q: "What's the booking process?", a: "Send us an inquiry through this page, on WhatsApp, or by email. We'll send a detailed itinerary and quote within 24 hours. A 25% deposit confirms your seat; the rest is due 14 days before departure." },
+  { q: "Is travel insurance required?", a: "Strongly recommended. Adventure-grade cover that includes high-altitude evacuation. We can refer you to good insurers but do not sell policies ourselves." },
+  { q: "What happens if weather closes the road?", a: "We build a buffer day into every Adi Kailash itinerary. If we still cannot complete darshan because of weather, we offer a discounted return trip in the same season." },
+  { q: "Are there options for solo women travellers?", a: "Yes. About a third of our yatris are solo women. We arrange single-share accommodation on request and our team includes a senior woman trip lead on most departures." },
+];
+
+const FAQ = () => {
+  const [open, setOpen] = React.useState(0);
+  return (
+    <section className="section bg-snow" id="faq" data-screen-label="FAQ" style={{ paddingTop: 40 }}>
+      <div className="wrap">
+        <div className="grid" style={{ gridTemplateColumns: "1fr 1.4fr", gap: 56, alignItems: "flex-start" }}>
+          <Reveal>
+            <div style={{ position: "sticky", top: 100 }}>
+              <div className="eyebrow" style={{ marginBottom: 14 }}>FAQ</div>
+              <h2 className="display" style={{ fontSize: "clamp(28px, 3.4vw, 42px)", margin: "0 0 18px" }}>
+                Questions we hear most.
+              </h2>
+              <p className="text-muted" style={{ fontSize: 15 }}>
+                Don't see yours? Drop us a WhatsApp on +91 81269 80408 — we usually reply same day.
+              </p>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div style={{ borderTop: "1px solid var(--line)" }}>
+              {FAQS.map((f, i) => {
+                const isOpen = open === i;
+                return (
+                  <div key={f.q} style={{ borderBottom: "1px solid var(--line)" }}>
+                    <button
+                      onClick={() => setOpen(isOpen ? -1 : i)}
+                      style={{
+                        background: "transparent",
+                        border: 0,
+                        width: "100%",
+                        textAlign: "left",
+                        padding: "20px 0",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        gap: 18,
+                        color: "var(--ink)",
+                        fontSize: 16,
+                        fontWeight: 600,
+                      }}
+                    >
+                      <span>{f.q}</span>
+                      <span
+                        style={{
+                          width: 28,
+                          height: 28,
+                          borderRadius: "50%",
+                          border: "1px solid var(--line-2)",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          color: "var(--ink-2)",
+                          flexShrink: 0,
+                          transition: "all 200ms ease",
+                          background: isOpen ? "var(--ink)" : "transparent",
+                          color: isOpen ? "var(--cream)" : "var(--ink-2)",
+                        }}
+                      >
+                        <Icon name={isOpen ? "minus" : "plus"} size={14} />
+                      </span>
+                    </button>
+                    <div
+                      style={{
+                        overflow: "hidden",
+                        maxHeight: isOpen ? 200 : 0,
+                        transition: "max-height 280ms ease",
+                      }}
+                    >
+                      <p style={{ color: "var(--ink-soft)", fontSize: 14.5, lineHeight: 1.7, margin: 0, paddingBottom: 22, paddingRight: 40 }}>
+                        {f.a}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// ============================================================
+// BOOKING FORM
+// ============================================================
+const Booking = React.forwardRef((props, ref) => {
+  const [form, setForm] = React.useState({
+    name: "",
+    phone: "",
+    email: "",
+    destination: "adikailash",
+    pickup: "Kathgodam",
+    tier: "Comfort",
+    month: "",
+    group: "2",
+    msg: "",
+  });
+  const [errors, setErrors] = React.useState({});
+  const [submitted, setSubmitted] = React.useState(false);
+
+  const set = (k) => (e) => setForm((s) => ({ ...s, [k]: e.target.value }));
+
+  const validate = () => {
+    const e = {};
+    if (!form.name.trim()) e.name = "Please tell us your name.";
+    if (!/^[0-9+\-\s]{8,}$/.test(form.phone)) e.phone = "A reachable phone number, please.";
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email)) e.email = "Looks like the email isn't quite right.";
+    setErrors(e);
+    return Object.keys(e).length === 0;
+  };
+
+  const submit = (ev) => {
+    ev.preventDefault();
+    if (!validate()) return;
+    setSubmitted(true);
+  };
+
+  return (
+    <section className="section" id="inquire" data-screen-label="Booking" ref={ref}>
+      <div className="wrap">
+        <div className="grid" style={{ gridTemplateColumns: "1fr 1.3fr", gap: 56, alignItems: "flex-start" }}>
+          <Reveal>
+            <div style={{ position: "sticky", top: 100 }}>
+              <div className="eyebrow" style={{ marginBottom: 14 }}>Plan your yatra</div>
+              <h2 className="display" style={{ fontSize: "clamp(30px, 3.6vw, 46px)", margin: "0 0 22px" }}>
+                Tell us when. We'll send a quote within 24 hours.
+              </h2>
+              <p className="text-muted" style={{ marginBottom: 28, fontSize: 15 }}>
+                Or just call. We pick up — even at 5,000m if there's signal.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+                <a href="tel:+918126980408" style={{ display: "flex", gap: 12, alignItems: "center", color: "var(--ink)" }}>
+                  <span style={{ width: 36, height: 36, borderRadius: 10, background: "var(--cream-2)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--alpen-deep)" }}><i className="fa-solid fa-phone" style={{ fontSize: 15 }} /></span>
+                  <div><div style={{ fontWeight: 700 }}>+91 81269 80408</div><div style={{ fontSize: 12.5, color: "var(--ink-soft)" }}>Ashish · founder · 9am–9pm IST</div></div>
+                </a>
+                <a href="tel:+917037478455" style={{ display: "flex", gap: 12, alignItems: "center", color: "var(--ink)" }}>
+                  <span style={{ width: 36, height: 36, borderRadius: 10, background: "var(--cream-2)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--alpen-deep)" }}><i className="fa-solid fa-phone" style={{ fontSize: 15 }} /></span>
+                  <div><div style={{ fontWeight: 700 }}>+91 70374 78455</div><div style={{ fontSize: 12.5, color: "var(--ink-soft)" }}>Manoj · operations</div></div>
+                </a>
+                <a href="mailto:contact@findingkailash.com" style={{ display: "flex", gap: 12, alignItems: "center", color: "var(--ink)" }}>
+                  <span style={{ width: 36, height: 36, borderRadius: 10, background: "var(--cream-2)", display: "inline-flex", alignItems: "center", justifyContent: "center", color: "var(--alpen-deep)" }}><i className="fa-solid fa-envelope" style={{ fontSize: 15 }} /></span>
+                  <div><div style={{ fontWeight: 700 }}>contact@findingkailash.com</div><div style={{ fontSize: 12.5, color: "var(--ink-soft)" }}>Mail us · 24h reply</div></div>
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={100}>
+            {submitted ? (
+              <div className="card" style={{ padding: 48, textAlign: "center" }}>
+                <div style={{ fontSize: 38, marginBottom: 12 }}>🙏</div>
+                <div className="display" style={{ fontSize: 28, fontWeight: 700, marginBottom: 10 }}>Inquiry received.</div>
+                <p style={{ color: "var(--ink-soft)", fontSize: 15, maxWidth: 440, margin: "0 auto" }}>
+                  We've got it. Expect a custom itinerary &amp; quote in your inbox within 24 hours, often sooner.
+                  Until then — go for a walk.
+                </p>
+              </div>
+            ) : (
+              <form className="card" style={{ padding: 32 }} onSubmit={submit} noValidate>
+                <div className="grid grid-2" style={{ gap: 18 }}>
+                  <div className="field">
+                    <label className="field__label">Your name</label>
+                    <input className="field__input" value={form.name} onChange={set("name")} placeholder="Aarti Menon" />
+                    {errors.name && <span className="field__error">{errors.name}</span>}
+                  </div>
+                  <div className="field">
+                    <label className="field__label">Phone / WhatsApp</label>
+                    <input className="field__input" value={form.phone} onChange={set("phone")} placeholder="+91 …" />
+                    {errors.phone && <span className="field__error">{errors.phone}</span>}
+                  </div>
+                  <div className="field" style={{ gridColumn: "1 / -1" }}>
+                    <label className="field__label">Email</label>
+                    <input className="field__input" value={form.email} onChange={set("email")} placeholder="you@example.com" />
+                    {errors.email && <span className="field__error">{errors.email}</span>}
+                  </div>
+                  <div className="field">
+                    <label className="field__label">Destination</label>
+                    <select className="field__select" value={form.destination} onChange={set("destination")}>
+                      {DESTINATIONS.map((d) => <option key={d.id} value={d.id}>{d.name}</option>)}
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label className="field__label">Pickup city</label>
+                    <select className="field__select" value={form.pickup} onChange={set("pickup")}>
+                      <option>Pithoragarh</option>
+                      <option>Kathgodam</option>
+                      <option>Delhi</option>
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label className="field__label">Package</label>
+                    <select className="field__select" value={form.tier} onChange={set("tier")}>
+                      <option>Comfort</option>
+                      <option>Premium</option>
+                    </select>
+                  </div>
+                  <div className="field">
+                    <label className="field__label">Group size</label>
+                    <select className="field__select" value={form.group} onChange={set("group")}>
+                      {[1,2,3,4,5,6,7,8,"9+"].map((n) => <option key={n}>{n}</option>)}
+                    </select>
+                  </div>
+                  <div className="field" style={{ gridColumn: "1 / -1" }}>
+                    <label className="field__label">Preferred month</label>
+                    <input className="field__input" value={form.month} onChange={set("month")} placeholder="e.g. June 2026, or flexible" />
+                  </div>
+                  <div className="field" style={{ gridColumn: "1 / -1" }}>
+                    <label className="field__label">Anything we should know?</label>
+                    <textarea className="field__textarea" value={form.msg} onChange={set("msg")} placeholder="Dietary, fitness concerns, anniversary trip, photography focus…" />
+                  </div>
+                </div>
+                <div style={{ marginTop: 22, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
+                  <span className="text-muted" style={{ fontSize: 12.5 }}>
+                    No deposit at this stage. We'll send a personalised quote first.
+                  </span>
+                  <button type="submit" className="btn btn--alpen">Send inquiry <i className="fa-solid fa-arrow-right" style={{ fontSize: 15 }} /></button>
+                </div>
+              </form>
+            )}
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+});
+
+// ============================================================
+// FOOTER
+// ============================================================
+const Footer = () => (
+  <footer className="foot" data-screen-label="Footer">
+    <svg viewBox="0 0 1600 100" preserveAspectRatio="none" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 80, width: "100%", opacity: 0.18, color: "var(--saffron)" }}>
+      <path d="M0,80 L160,40 L320,75 L500,20 L680,65 L860,30 L1040,65 L1220,40 L1400,70 L1600,40 L1600,100 L0,100 Z" fill="currentColor" />
+    </svg>
+    <div className="wrap" style={{ position: "relative", paddingLeft: "clamp(20px, 6vw, 28px)", paddingRight: "clamp(20px, 6vw, 28px)" }}>
+      <div className="grid" style={{ gridTemplateColumns: "1.4fr 1fr 1fr 1fr", gap: 32, marginBottom: 56 }}>
+        <div>
+          <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
+            <OmPeakIcon size={32} color="#faf6ee" />
+            <span className="display" style={{ fontSize: 22, fontWeight: 700 }}>Finding Kailash</span>
+          </div>
+          <p className="devanagari" style={{ fontSize: 17, color: "var(--saffron)", marginBottom: 14 }}>यात्रा नहीं, एक अनुभव है</p>
+          <p style={{ color: "rgba(250,246,238,0.7)", fontSize: 14, lineHeight: 1.65, maxWidth: 360 }}>
+            Soul-stirring expeditions to Adi Kailash &amp; Om Parvat — and across the Kumaon Himalaya. Run by people from these mountains.
+          </p>
+        </div>
+        <div>
+          <div className="metric__label" style={{ color: "rgba(250,246,238,0.55)", marginBottom: 14 }}>Trails</div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10, fontSize: 14 }}>
+            {DESTINATIONS.map((d) => <li key={d.id}><a href={`#journeys`}>{d.name}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <div className="metric__label" style={{ color: "rgba(250,246,238,0.55)", marginBottom: 14 }}>Plan</div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10, fontSize: 14 }}>
+            <li><a href="#itinerary">Itinerary</a></li>
+            <li><a href="#tiers">Packages</a></li>
+            <li><a href="#permits">Permits &amp; prep</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#inquire">Plan my yatra</a></li>
+          </ul>
+        </div>
+        <div>
+          <div className="metric__label" style={{ color: "rgba(250,246,238,0.55)", marginBottom: 14 }}>Reach us</div>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 10, fontSize: 14 }}>
+            <li><a href="tel:+918126980408"><i className="fa-solid fa-phone" style={{ fontSize: 13 }} /> +91 81269 80408</a></li>
+            <li><a href="tel:+917037478455"><i className="fa-solid fa-phone" style={{ fontSize: 13 }} /> +91 70374 78455</a></li>
+            <li><a href="mailto:contact@findingkailash.com"><i className="fa-solid fa-envelope" style={{ fontSize: 13 }} /> contact@findingkailash.com</a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><i className="fa-brands fa-instagram" style={{ fontSize: 13 }} /> @findingkailash</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div style={{ paddingTop: 24, borderTop: "1px solid rgba(250,246,238,0.12)", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 18 }}>
+        <div style={{ display: "flex", flexWrap: "wrap", gap: 8 }}>
+          {["#adikailash", "#omparvat", "#uttarakhand", "#bholenath", "#shiva", "#kumaon"].map((h) => (
+            <span key={h} style={{ fontSize: 12, color: "var(--saffron)", fontFamily: "'JetBrains Mono', monospace" }}>{h}</span>
+          ))}
+        </div>
+        <div style={{ fontSize: 12, color: "rgba(250,246,238,0.45)" }}>
+          © {new Date().getFullYear()} Finding Kailash · Pithoragarh, Uttarakhand · Made with हिमालय
+        </div>
+      </div>
+      <div style={{ paddingTop: 14, paddingBottom: 8, textAlign: "center", fontSize: 12, color: "rgba(250,246,238,0.35)" }}>
+        Created with ❤️ by{" "}
+        <a href="https://soartech.in" target="_blank" rel="noreferrer" style={{ color: "rgba(250,246,238,0.55)", textDecoration: "none", borderBottom: "1px solid rgba(250,246,238,0.25)" }}>
+          Soartech
+        </a>
+      </div>
+    </div>
+  </footer>
+);
+
+Object.assign(window, {
+  Itinerary, Tiers, Included, Gallery, Testimonials, About, Permits, FAQ, Booking, Footer,
+});

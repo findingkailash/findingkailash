@@ -1,0 +1,14 @@
+{
+  "name": "finding-kailash",
+  "version": "1.0.0",
+  "description": "Finding Kailash — Adi Kailash & Om Parvat expeditions landing page",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.24.0",
+    "@babel/core": "^7.24.0",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.24.0"
+  }
+}
