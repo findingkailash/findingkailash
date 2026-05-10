@@ -56,7 +56,7 @@ const Nav = ({
   }, "FAQ")), /*#__PURE__*/React.createElement("button", {
     className: "btn btn--alpen btn--small",
     onClick: onInquire
-  }, "Plan my yatra ", /*#__PURE__*/React.createElement("i", {
+  }, "Plan my yatra", " ", /*#__PURE__*/React.createElement("i", {
     className: "fa-solid fa-arrow-right",
     style: {
       fontSize: 15
@@ -111,7 +111,7 @@ const Hero = ({
       marginBottom: 14,
       fontWeight: 500
     }
-  }, "\u092F\u093E\u0924\u094D\u0930\u093E \u0928\u0939\u0940\u0902, \u090F\u0915 \u0905\u0928\u0941\u092D\u0935 \u0939\u0948\u2026 ", /*#__PURE__*/React.createElement("span", {
+  }, "\u092F\u093E\u0924\u094D\u0930\u093E \u0928\u0939\u0940\u0902, \u090F\u0915 \u0905\u0928\u0941\u092D\u0935 \u0939\u0948\u2026", " ", /*#__PURE__*/React.createElement("span", {
     style: {
       color: "var(--alpen)"
     }
@@ -130,11 +130,11 @@ const Hero = ({
       marginBottom: 32,
       lineHeight: 1.55
     }
-  }, "Soul-stirring expeditions to ", /*#__PURE__*/React.createElement("strong", {
+  }, "Soul-stirring expeditions to", " ", /*#__PURE__*/React.createElement("strong", {
     style: {
       color: "var(--ink)"
     }
-  }, "Adi Kailash & Om Parvat"), " \u2014 and across four more sacred valleys of Uttarakhand. Witness the sacred Om carved by nature itself."), /*#__PURE__*/React.createElement("div", {
+  }, "Adi Kailash & Om Parvat"), " ", "\u2014 and across four more sacred valleys of Uttarakhand. Witness the sacred Om carved by nature itself."), /*#__PURE__*/React.createElement("div", {
     className: "row",
     style: {
       marginBottom: 36
@@ -142,20 +142,20 @@ const Hero = ({
   }, /*#__PURE__*/React.createElement("button", {
     className: "btn btn--alpen",
     onClick: onInquire
-  }, "Plan my journey ", /*#__PURE__*/React.createElement("i", {
+  }, "Plan my journey", " ", /*#__PURE__*/React.createElement("i", {
     className: "fa-solid fa-arrow-right",
     style: {
       fontSize: 16
     }
   })), /*#__PURE__*/React.createElement("a", {
-    href: "tel:+918126980408",
+    href: "tel:+917037478455",
     className: "btn btn--ghost"
   }, /*#__PURE__*/React.createElement("i", {
     className: "fa-solid fa-phone",
     style: {
       fontSize: 15
     }
-  }), " +91 81269 80408")), /*#__PURE__*/React.createElement("div", {
+  }), " +91 70374 78455")), /*#__PURE__*/React.createElement("div", {
     className: "row",
     style: {
       gap: 22
@@ -173,7 +173,7 @@ const Hero = ({
     className: "metric"
   }, /*#__PURE__*/React.createElement("div", {
     className: "metric__num"
-  }, "8\u201311"), /*#__PURE__*/React.createElement("div", {
+  }, "Customisable"), /*#__PURE__*/React.createElement("div", {
     className: "metric__label",
     style: {
       color: "var(--ink)"
@@ -339,7 +339,7 @@ const DESTINATIONS = [{
   name: "Adi Kailash & Om Parvat",
   hindi: "आदि कैलाश एवं ॐ पर्वत",
   region: "Vyas Valley · Pithoragarh",
-  days: "8 days",
+  days: "5 days",
   altitude: "5,945 m",
   grade: "Moderate",
   blurb: "The pilgrimage at the heart of everything we do. Stand before the snow-carved ॐ of Om Parvat, circle the sapphire Parvati Kund, and feel the Himalaya breathe back at you.",
@@ -540,7 +540,7 @@ const Journeys = ({
   }, /*#__PURE__*/React.createElement("a", {
     href: "#itinerary",
     className: "btn"
-  }, "View itinerary ", /*#__PURE__*/React.createElement("i", {
+  }, "View itinerary", " ", /*#__PURE__*/React.createElement("i", {
     className: "fa-solid fa-arrow-right",
     style: {
       fontSize: 15
@@ -652,23 +652,26 @@ const Pickup = ({
     sub: "Closest base camp",
     tag: "Most affordable",
     color: "var(--pine)",
-    from: "₹ 22,500",
-    drive: "Same-day pickup, ~3 hrs to Dharchula",
+    comfort: "₹ 25,000",
+    premium: "₹ 30,000",
+    drive: "Same-day pickup, ~5 hrs to Gunji / Nabi",
     perks: ["Shortest drive day", "Best for return trekkers", "Lowest expedition cost"]
   }, {
-    city: "Kathgodam",
-    sub: "Rail-head pickup",
+    city: "Haldwani",
+    sub: "Rail-head pickup · Kathgodam stn",
     tag: "Most popular",
     color: "var(--alpen)",
-    from: "₹ 28,500",
-    drive: "Train from Delhi (overnight), then 8 hrs road",
-    perks: ["Easy from any metro by rail", "Stop at Almora / Chaukori", "Balanced cost & comfort"]
+    comfort: "₹ 32,000",
+    premium: "₹ 51,000",
+    drive: "Train from any metro (overnight), ~10 hrs road",
+    perks: ["Easy from any city by rail", "Stop at Almora / Chaukori", "Balanced cost & comfort"]
   }, {
     city: "Delhi",
     sub: "Door-to-door from the capital",
     tag: "Premium ease",
     color: "var(--sky-deep)",
-    from: "₹ 34,500",
+    comfort: "₹ 35,000",
+    premium: "₹ 55,000",
     drive: "Full transfer included from Delhi NCR",
     perks: ["No train booking to manage", "Flexible departure window", "Includes acclimatisation halt"]
   }];
@@ -752,22 +755,52 @@ const Pickup = ({
       border: "1px solid var(--line)"
     }
   }, t.tag)), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    className: "metric__label"
-  }, "Adi Kailash \xB7 from"), /*#__PURE__*/React.createElement("div", {
+    className: "metric__label",
+    style: {
+      marginBottom: 6
+    }
+  }, "Adi Kailash \xB7 per person"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      flexDirection: "column",
+      gap: 4
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
     className: "display",
     style: {
-      fontSize: 38,
-      fontWeight: 700,
-      marginTop: 4
+      fontSize: 32,
+      fontWeight: 700
     }
-  }, t.from, /*#__PURE__*/React.createElement("span", {
+  }, t.comfort), /*#__PURE__*/React.createElement("span", {
     style: {
-      fontSize: 14,
-      color: "var(--ink-soft)",
-      fontWeight: 500,
-      marginLeft: 6
+      fontSize: 13,
+      color: "var(--ink-soft)"
     }
-  }, "/ person"))), /*#__PURE__*/React.createElement("div", {
+  }, "Comfort")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: "flex",
+      alignItems: "baseline",
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "display",
+    style: {
+      fontSize: 22,
+      fontWeight: 700,
+      color: "var(--alpen-deep)"
+    }
+  }, t.premium), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      color: "var(--ink-soft)"
+    }
+  }, "Premium")))), /*#__PURE__*/React.createElement("div", {
     style: {
       fontSize: 13,
       color: "var(--ink-soft)",

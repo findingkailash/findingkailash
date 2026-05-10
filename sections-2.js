@@ -1,48 +1,33 @@
 // sections-2.jsx — Itinerary, Tiers, Included, Gallery, Testimonials, About, Permits, FAQ, Booking, Footer
 
 // ============================================================
-// ITINERARY (Adi Kailash featured, 8 days)
+// ITINERARY (Adi Kailash & Om Parvat, 5 days)
 // ============================================================
 const ITINERARY = [{
   d: "Day 01",
-  title: "Pickup → Dharchula",
-  elev: "915 m",
-  body: "Morning pickup. We drive through the Kumaon foothills — Almora, Pithoragarh — to the riverside town of Dharchula. Briefing & gear check by the Kali river."
+  title: "Pickup → Pithoragarh",
+  elev: "1,814 m",
+  body: "Morning pickup from Delhi or Kathgodam. A long, beautiful drive through the Kumaon foothills — tea stops, mountain views, and the first smell of pine. Arrive Pithoragarh by evening. Briefing & gear check at the hotel."
 }, {
   d: "Day 02",
-  title: "Dharchula → Gunji",
+  title: "Pithoragarh → Gunji / Nabi",
   elev: "3,200 m",
-  body: "A spectacular drive through the Vyas Valley. Tea at Tawaghat, lunch at Budi. Light acclimatisation walk in Gunji village in the evening."
+  body: "Early start along the Kali river valley through Dharchula and Tawaghat, climbing steadily into the Vyas Valley. The landscape opens into high-altitude meadows and snow peaks. Overnight in Gunji or Nabi — light acclimatisation walk in the evening."
 }, {
   d: "Day 03",
-  title: "Gunji → Adi Kailash darshan → Jolingkong",
-  elev: "4,572 m",
-  body: "Drive to Jolingkong via Kuti. Darshan at Parvati Sarovar at the base of Adi Kailash. Return to Gunji by evening."
+  title: "Gunji / Nabi → Om Parvat (Nabhidhang)",
+  elev: "4,150 m",
+  body: "The day. We drive to Nabhidhang for a clear view of the snow-carved ॐ on Om Parvat. Time to sit, breathe, and witness. Return to Gunji / Nabi by afternoon. Reserve day built into this leg if weather intervenes."
 }, {
   d: "Day 04",
-  title: "Gunji → Om Parvat (Nabhidhang)",
-  elev: "4,150 m",
-  body: "The day. We drive to Nabhidhang for the snow-carved ॐ on Om Parvat. Time to sit, breathe, and witness. Return to Gunji."
+  title: "Gunji / Nabi → Adi Kailash darshan → Pithoragarh",
+  elev: "4,572 m",
+  body: "Drive to Jolingkong via Kuti village. Darshan at Parvati Sarovar at the foot of Adi Kailash — the Himalayan echo of Mansarovar. Then a long descent all the way back to Pithoragarh. Celebratory dinner in town."
 }, {
   d: "Day 05",
-  title: "Reserve / weather buffer",
-  elev: "3,200 m",
-  body: "A built-in spare day for weather, photography, or a side-walk to Kalapani / Nabhi village. Vital for high-altitude expeditions."
-}, {
-  d: "Day 06",
-  title: "Gunji → Dharchula",
-  elev: "915 m",
-  body: "Long descent day. We retrace the Vyas Valley with a celebratory dinner at Dharchula."
-}, {
-  d: "Day 07",
-  title: "Dharchula → Pithoragarh",
-  elev: "1,514 m",
-  body: "Easy drive across the lower hills. Time for shopping in Pithoragarh — local thulma blankets, copper, beans of Munsiyari."
-}, {
-  d: "Day 08",
-  title: "Departure",
-  elev: "—",
-  body: "Drop at your departure point — Pithoragarh / Kathgodam / Delhi as per package."
+  title: "Pithoragarh → Jageshwar → Kaichi Dham → Delhi / Kathgodam",
+  elev: "~250 m",
+  body: "Unhurried departure with two sacred stops on the way down — the ancient Jageshwar Dham temple complex (108 Shiva shrines in a deodar forest) and the beloved Kaichi Dham ashram. Drop at Kathgodam railway station or Delhi as per your package."
 }];
 const Itinerary = () => /*#__PURE__*/React.createElement("section", {
   className: "section bg-dawn",
@@ -71,7 +56,7 @@ const Itinerary = () => /*#__PURE__*/React.createElement("section", {
     margin: 0,
     maxWidth: 700
   }
-}, "Eight days. One mountain that will look back at you.")), /*#__PURE__*/React.createElement("div", {
+}, "Five days. Two mountains that will look back at you.")), /*#__PURE__*/React.createElement("div", {
   className: "row",
   style: {
     gap: 8
@@ -83,7 +68,7 @@ const Itinerary = () => /*#__PURE__*/React.createElement("section", {
   style: {
     fontSize: 13
   }
-}), " May\u2013Oct"), /*#__PURE__*/React.createElement("span", {
+}), " ", "May\u2013Oct"), /*#__PURE__*/React.createElement("span", {
   className: "chip"
 }, /*#__PURE__*/React.createElement("i", {
   className: "fa-solid fa-users",
@@ -97,7 +82,7 @@ const Itinerary = () => /*#__PURE__*/React.createElement("section", {
   style: {
     fontSize: 13
   }
-}), " ILP included")))), /*#__PURE__*/React.createElement("div", {
+}), " ", "ILP included")))), /*#__PURE__*/React.createElement("div", {
   style: {
     position: "relative",
     paddingLeft: 40
@@ -172,16 +157,16 @@ const Itinerary = () => /*#__PURE__*/React.createElement("section", {
 const Tiers = ({
   onInquire
 }) => {
-  const rows = [["Group size", "Up to 12 trekkers", "Up to 6 trekkers"], ["Stay", "Clean guesthouses, twin-share", "Best-available, mostly single-share"], ["Vehicle", "Shared 4×4 / Tempo Traveller", "Private SUV per group"], ["Meals", "Local Kumaoni vegetarian", "Curated · with chef on long days"], ["Guide", "Senior trek leader", "Trek leader + dedicated photographer"], ["Reserve days", "1 weather buffer", "2 weather buffers"], ["Permits & paperwork", "Included", "Included + handled door-to-door"]];
+  const rows = [["Price by pickup", "Delhi ₹35,000 · Haldwani ₹32,000 · Pithoragarh ₹25,000", "Delhi ₹55,000 · Haldwani ₹51,000 · Pithoragarh ₹30,000"], ["Group size", "Up to 12 trekkers", "Up to 6 trekkers"], ["Stay", "Clean guesthouses, twin-share", "Best-available, mostly single-share"], ["Vehicle", "Shared 4×4 / Tempo Traveller", "Private SUV per group"], ["Meals", "Local Kumaoni vegetarian", "Curated · with chef on long days"], ["Guide", "Senior trek leader", "Trek leader + dedicated photographer"], ["Reserve days", "1 weather buffer", "2 weather buffers"], ["Permits & paperwork", "Included", "Included + handled door-to-door"]];
   const cols = [{
     name: "Comfort",
     sub: "Our default. Honest, well-run, joyful.",
-    price: "from ₹ 28,500",
+    price: "from ₹ 25,000",
     color: "var(--ink)"
   }, {
     name: "Premium",
     sub: "Smaller groups, more flexibility, more time.",
-    price: "from ₹ 48,500",
+    price: "from ₹ 30,000",
     color: "var(--alpen)"
   }];
   return /*#__PURE__*/React.createElement("section", {
@@ -342,7 +327,7 @@ const Tiers = ({
 // INCLUDED / NOT INCLUDED
 // ============================================================
 const Included = () => {
-  const yes = ["Inner Line Permits & all paperwork", "Accommodation (twin-share guesthouses & tents)", "All meals from Day 1 dinner to Day 8 breakfast", "Private 4×4 / Tempo Traveller transfers", "Senior trek leader + local Bhotia guide", "Basic first-aid & oxygen cylinder on standby", "Welcome kit · prayer flags · trip diary"];
+  const yes = ["Inner Line Permits & all paperwork", "Accommodation (twin-share guesthouses & tents)", "All meals from Day 1 dinner to Day 5 breakfast", "Private 4×4 / Tempo Traveller transfers", "Senior trek leader + local Bhotia guide", "Basic first-aid & oxygen cylinder on standby", "Welcome kit · prayer flags · trip diary"];
   const no = ["Train / flight to Pickup City", "Personal trekking gear (shoes, jackets)", "Pony / porter for personal luggage", "Travel insurance (strongly recommended)", "Anything not in the inclusions list", "Costs from delays caused by weather / road closures"];
   return /*#__PURE__*/React.createElement("section", {
     className: "section bg-snow",
@@ -557,10 +542,20 @@ const GalleryCarousel = ({
     "aria-label": "Next"
   }, "\u203A"));
 };
+const DEST_GALLERY = {
+  adikailash: [PHOTOS.ak1, PHOTOS.ak2, PHOTOS.ak3, PHOTOS.ak4, PHOTOS.ak5],
+  darma: [PHOTOS.da1, PHOTOS.da2, PHOTOS.da3, PHOTOS.da4, PHOTOS.da5],
+  munsiyari: [PHOTOS.mu1, PHOTOS.mu2, PHOTOS.mu3, PHOTOS.mu4, PHOTOS.mu5],
+  manaskhand: [PHOTOS.ma1, PHOTOS.ma2, PHOTOS.ma3, PHOTOS.ma4, PHOTOS.ma5],
+  johar: [PHOTOS.jo1, PHOTOS.jo2, PHOTOS.jo3, PHOTOS.jo4, PHOTOS.jo5]
+};
 const Gallery = () => {
   const [active, setActive] = React.useState(DESTINATIONS[0].id);
   const dest = DESTINATIONS.find(d => d.id === active);
-  const galleryPhotos = [PHOTOS[active] || PHOTOS.g1, PHOTOS.g2, PHOTOS.g3, PHOTOS.g4, PHOTOS.g5];
+  const photos = DEST_GALLERY[active] || [];
+  const mainPhoto = photos[0];
+  const secondary = photos.slice(1);
+  const galleryPhotos = photos;
   return /*#__PURE__*/React.createElement("section", {
     className: "section bg-dawn",
     id: "gallery",
@@ -606,42 +601,22 @@ const Gallery = () => {
   }, /*#__PURE__*/React.createElement("div", {
     className: "gallery-grid"
   }, /*#__PURE__*/React.createElement(Photo, {
-    src: PHOTOS[active] || PHOTOS.g1,
+    src: mainPhoto,
     alt: `${dest.name} feature`,
     style: {
       gridRow: "1 / 3",
       height: "100%",
       borderRadius: 14
     }
-  }), /*#__PURE__*/React.createElement(Photo, {
-    src: PHOTOS.g2,
-    alt: `${dest.name} 02`,
+  }), secondary.map((src, i) => /*#__PURE__*/React.createElement(Photo, {
+    key: src,
+    src: src,
+    alt: `${dest.name} 0${i + 2}`,
     style: {
       height: "100%",
       borderRadius: 14
     }
-  }), /*#__PURE__*/React.createElement(Photo, {
-    src: PHOTOS.g3,
-    alt: `${dest.name} 03`,
-    style: {
-      height: "100%",
-      borderRadius: 14
-    }
-  }), /*#__PURE__*/React.createElement(Photo, {
-    src: PHOTOS.g4,
-    alt: `${dest.name} 04`,
-    style: {
-      height: "100%",
-      borderRadius: 14
-    }
-  }), /*#__PURE__*/React.createElement(Photo, {
-    src: PHOTOS.g5,
-    alt: `${dest.name} 05`,
-    style: {
-      height: "100%",
-      borderRadius: 14
-    }
-  })), /*#__PURE__*/React.createElement(GalleryCarousel, {
+  }))), /*#__PURE__*/React.createElement(GalleryCarousel, {
     photos: galleryPhotos,
     destName: dest.name
   }))));
@@ -966,7 +941,7 @@ const FAQ = () => {
     style: {
       fontSize: 15
     }
-  }, "Don't see yours? Drop us a WhatsApp on +91 81269 80408 \u2014 we usually reply same day."))), /*#__PURE__*/React.createElement(Reveal, {
+  }, "Don't see yours? Drop us a WhatsApp on +91 70374 78455 \u2014 we usually reply same day."))), /*#__PURE__*/React.createElement(Reveal, {
     delay: 100
   }, /*#__PURE__*/React.createElement("div", {
     style: {
@@ -1041,7 +1016,7 @@ const Booking = React.forwardRef((props, ref) => {
     phone: "",
     email: "",
     destination: "adikailash",
-    pickup: "Kathgodam",
+    pickup: "Haldwani",
     tier: "Comfort",
     month: "",
     group: "2",
@@ -1109,39 +1084,6 @@ const Booking = React.forwardRef((props, ref) => {
       gap: 14
     }
   }, /*#__PURE__*/React.createElement("a", {
-    href: "tel:+918126980408",
-    style: {
-      display: "flex",
-      gap: 12,
-      alignItems: "center",
-      color: "var(--ink)"
-    }
-  }, /*#__PURE__*/React.createElement("span", {
-    style: {
-      width: 36,
-      height: 36,
-      borderRadius: 10,
-      background: "var(--cream-2)",
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "var(--alpen-deep)"
-    }
-  }, /*#__PURE__*/React.createElement("i", {
-    className: "fa-solid fa-phone",
-    style: {
-      fontSize: 15
-    }
-  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontWeight: 700
-    }
-  }, "+91 81269 80408"), /*#__PURE__*/React.createElement("div", {
-    style: {
-      fontSize: 12.5,
-      color: "var(--ink-soft)"
-    }
-  }, "Ashish \xB7 founder \xB7 9am\u20139pm IST"))), /*#__PURE__*/React.createElement("a", {
     href: "tel:+917037478455",
     style: {
       display: "flex",
@@ -1174,7 +1116,40 @@ const Booking = React.forwardRef((props, ref) => {
       fontSize: 12.5,
       color: "var(--ink-soft)"
     }
-  }, "Manoj \xB7 operations"))), /*#__PURE__*/React.createElement("a", {
+  }, "Prashant Pal \xB7 founder \xB7 9am\u20139pm IST"))), /*#__PURE__*/React.createElement("a", {
+    href: "tel:+917037478455",
+    style: {
+      display: "flex",
+      gap: 12,
+      alignItems: "center",
+      color: "var(--ink)"
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: 10,
+      background: "var(--cream-2)",
+      display: "inline-flex",
+      alignItems: "center",
+      justifyContent: "center",
+      color: "var(--alpen-deep)"
+    }
+  }, /*#__PURE__*/React.createElement("i", {
+    className: "fa-solid fa-phone",
+    style: {
+      fontSize: 15
+    }
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700
+    }
+  }, "+91 70374 78455"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12.5,
+      color: "var(--ink-soft)"
+    }
+  }, "Naval Bisht \xB7 Co Founder"))), /*#__PURE__*/React.createElement("a", {
     href: "mailto:contact@findingkailash.com",
     style: {
       display: "flex",
@@ -1301,7 +1276,7 @@ const Booking = React.forwardRef((props, ref) => {
     className: "field__select",
     value: form.pickup,
     onChange: set("pickup")
-  }, /*#__PURE__*/React.createElement("option", null, "Pithoragarh"), /*#__PURE__*/React.createElement("option", null, "Kathgodam"), /*#__PURE__*/React.createElement("option", null, "Delhi"))), /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/React.createElement("option", null, "Pithoragarh"), /*#__PURE__*/React.createElement("option", null, "Haldwani"), /*#__PURE__*/React.createElement("option", null, "Delhi"))), /*#__PURE__*/React.createElement("div", {
     className: "field"
   }, /*#__PURE__*/React.createElement("label", {
     className: "field__label"
@@ -1360,7 +1335,7 @@ const Booking = React.forwardRef((props, ref) => {
   }, "No deposit at this stage. We'll send a personalised quote first."), /*#__PURE__*/React.createElement("button", {
     type: "submit",
     className: "btn btn--alpen"
-  }, "Send inquiry ", /*#__PURE__*/React.createElement("i", {
+  }, "Send inquiry", " ", /*#__PURE__*/React.createElement("i", {
     className: "fa-solid fa-arrow-right",
     style: {
       fontSize: 15
@@ -1497,13 +1472,6 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     fontSize: 14
   }
 }, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-  href: "tel:+918126980408"
-}, /*#__PURE__*/React.createElement("i", {
-  className: "fa-solid fa-phone",
-  style: {
-    fontSize: 13
-  }
-}), " +91 81269 80408")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
   href: "tel:+917037478455"
 }, /*#__PURE__*/React.createElement("i", {
   className: "fa-solid fa-phone",
@@ -1511,14 +1479,21 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
     fontSize: 13
   }
 }), " +91 70374 78455")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "tel:+917037478455"
+}, /*#__PURE__*/React.createElement("i", {
+  className: "fa-solid fa-phone",
+  style: {
+    fontSize: 13
+  }
+}), " +91 81269 80408")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
   href: "mailto:contact@findingkailash.com"
 }, /*#__PURE__*/React.createElement("i", {
   className: "fa-solid fa-envelope",
   style: {
     fontSize: 13
   }
-}), " contact@findingkailash.com")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
-  href: "https://www.instagram.com/",
+}), " ", "contact@findingkailash.com")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "https://www.instagram.com/findingkailash/",
   target: "_blank",
   rel: "noreferrer"
 }, /*#__PURE__*/React.createElement("i", {
@@ -1526,7 +1501,7 @@ const Footer = () => /*#__PURE__*/React.createElement("footer", {
   style: {
     fontSize: 13
   }
-}), " @findingkailash"))))), /*#__PURE__*/React.createElement("div", {
+}), " ", "@findingkailash"))))), /*#__PURE__*/React.createElement("div", {
   style: {
     paddingTop: 24,
     borderTop: "1px solid rgba(250,246,238,0.12)",

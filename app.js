@@ -1,9 +1,10 @@
 // app.jsx — root composition + sticky CTA + tweaks panel
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-  "headline": "Walk the trail where the mountain hums Om.",
-  "palette": "alpenglow"
-} /*EDITMODE-END*/;
+  headline: "Walk the trail where the mountain hums Om.",
+  palette: "alpenglow"
+}; /*EDITMODE-END*/
+
 const PALETTES = {
   alpenglow: {
     alpen: "#e0773c",
@@ -46,7 +47,7 @@ function applyPalette(name) {
 const HEADLINE_OPTIONS = ["Walk the trail where the mountain hums Om.", "Stand before the Om carved by nature itself.", "Eight days. One mountain. A lifetime of quiet.", "The Himalaya is waiting. Listening, even."];
 const StickyCTA = () => /*#__PURE__*/React.createElement("a", {
   className: "sticky-cta__btn sticky-cta__btn--wa",
-  href: "https://wa.me/918126980408",
+  href: "https://wa.me/917037478455",
   target: "_blank",
   rel: "noreferrer",
   "aria-label": "Chat on WhatsApp",

@@ -102,7 +102,7 @@ const Beyond = () => /*#__PURE__*/React.createElement("section", {
     fontSize: "clamp(30px, 3.6vw, 48px)",
     margin: 0
   }
-}, "Three things we refuse to ", /*#__PURE__*/React.createElement("em", {
+}, "Three things we refuse to", " ", /*#__PURE__*/React.createElement("em", {
   style: {
     fontStyle: "italic",
     color: "var(--alpen-deep)"
@@ -186,7 +186,7 @@ const Beyond = () => /*#__PURE__*/React.createElement("section", {
     alignItems: "center",
     gap: 8
   }
-}, "Learn our process ", /*#__PURE__*/React.createElement("i", {
+}, "Learn our process", " ", /*#__PURE__*/React.createElement("i", {
   className: "fa-solid fa-arrow-right",
   style: {
     fontSize: 13
@@ -247,12 +247,12 @@ const Temples = () => /*#__PURE__*/React.createElement("section", {
     fontSize: "clamp(30px, 3.6vw, 48px)",
     margin: 0
   }
-}, "Temples ", /*#__PURE__*/React.createElement("em", {
+}, "Temples", " ", /*#__PURE__*/React.createElement("em", {
   style: {
     fontStyle: "italic",
     color: "var(--alpen-deep)"
   }
-}, "of"), " Kumaon")), /*#__PURE__*/React.createElement("p", {
+}, "of"), " ", "Kumaon")), /*#__PURE__*/React.createElement("p", {
   className: "text-muted",
   style: {
     maxWidth: 380,
@@ -367,7 +367,7 @@ const FinalCTA = ({
     fontStyle: "italic",
     color: "var(--saffron)"
   }
-}, "sacred"), " quest?"), /*#__PURE__*/React.createElement("p", {
+}, "sacred"), " ", "quest?"), /*#__PURE__*/React.createElement("p", {
   style: {
     color: "rgba(250,246,238,0.72)",
     maxWidth: 620,
@@ -384,14 +384,14 @@ const FinalCTA = ({
 }, /*#__PURE__*/React.createElement("button", {
   className: "btn btn--alpen",
   onClick: onInquire
-}, "Reserve a slot ", /*#__PURE__*/React.createElement("i", {
+}, "Reserve a slot", " ", /*#__PURE__*/React.createElement("i", {
   className: "fa-solid fa-arrow-right",
   style: {
     fontSize: 15
   }
 })), /*#__PURE__*/React.createElement("a", {
   className: "btn btn--ghost",
-  href: "https://wa.me/918126980408",
+  href: "https://wa.me/917037478455",
   target: "_blank",
   rel: "noreferrer",
   style: {
@@ -403,7 +403,7 @@ const FinalCTA = ({
   style: {
     fontSize: 16
   }
-}), " WhatsApp us")), /*#__PURE__*/React.createElement("div", {
+}), " ", "WhatsApp us")), /*#__PURE__*/React.createElement("div", {
   style: {
     display: "flex",
     justifyContent: "center",

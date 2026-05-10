@@ -24,29 +24,50 @@ const FK_ImageSlot = ({
 // these for the user's own image-slot setup later.
 const PHOTOS = {
   // hero
-  hero: "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?w=1200&q=85&auto=format&fit=crop",
+  hero: "/public/images/hero.jpg",
   // 5 destinations
-  adikailash: "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1600&q=85&auto=format&fit=crop",
-  darma: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1200&q=80&auto=format&fit=crop",
+  adikailash: "/public/images/omparvat_2.jpg",
+  darma: "/public/images/darma_valley.jpg",
   munsiyari: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop",
   manaskhand: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80&auto=format&fit=crop",
   johar: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80&auto=format&fit=crop",
   // founders portrait
   founders: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=1000&q=80&auto=format&fit=crop",
   // temples (manaskhand circuit)
-  kainchi: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=900&q=80&auto=format&fit=crop",
+  kainchi: "public/images/kaichi_dham.jpg",
   chitai: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=900&q=80&auto=format&fit=crop",
   jageshwar: "https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=900&q=80&auto=format&fit=crop",
   patal: "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80&auto=format&fit=crop",
-  // gallery photos (rotated by destination)
-  g1: "https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?w=1200&q=80&auto=format&fit=crop",
-  g2: "https://images.unsplash.com/photo-1551632811-561732d1e306?w=1000&q=80&auto=format&fit=crop",
-  g3: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&q=80&auto=format&fit=crop",
-  g4: "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?w=1000&q=80&auto=format&fit=crop",
-  g5: "https://images.unsplash.com/photo-1604608672516-d1c14a4cf0b4?w=1000&q=80&auto=format&fit=crop",
-  g6: "https://images.unsplash.com/photo-1486591038211-a0aacaecc94f?w=1000&q=80&auto=format&fit=crop",
-  g7: "https://images.unsplash.com/photo-1551636898-47668aa61de2?w=1000&q=80&auto=format&fit=crop",
-  g8: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1000&q=80&auto=format&fit=crop"
+  // gallery — Adi Kailash & Om Parvat (5 photos)
+  ak1: "/public/images/omparvat_4.jpg",
+  ak2: "/public/images/omparvat_2.jpg",
+  ak3: "/public/images/omparvat_3.jpg",
+  ak4: "/public/images/omparvat_1.jpg",
+  ak5: "/public/images/omparvat_5.jpg",
+  // gallery — Darma Valley (5 photos)
+  da1: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1000&q=80&auto=format&fit=crop",
+  da2: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&q=80&auto=format&fit=crop",
+  da3: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000&q=80&auto=format&fit=crop",
+  da4: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1000&q=80&auto=format&fit=crop",
+  da5: "https://images.unsplash.com/photo-1502519144081-acca18599776?w=1000&q=80&auto=format&fit=crop",
+  // gallery — Munsiyari (5 photos)
+  mu1: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1000&q=80&auto=format&fit=crop",
+  mu2: "https://images.unsplash.com/photo-1551636898-47668aa61de2?w=1000&q=80&auto=format&fit=crop",
+  mu3: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&q=80&auto=format&fit=crop",
+  mu4: "https://images.unsplash.com/photo-1527576539890-dfa815648363?w=1000&q=80&auto=format&fit=crop",
+  mu5: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&q=80&auto=format&fit=crop",
+  // gallery — Manaskhand Circuit (5 photos)
+  ma1: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&q=80&auto=format&fit=crop",
+  ma2: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=1000&q=80&auto=format&fit=crop",
+  ma3: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=1000&q=80&auto=format&fit=crop",
+  ma4: "https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=1000&q=80&auto=format&fit=crop",
+  ma5: "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1000&q=80&auto=format&fit=crop",
+  // gallery — Johar Valley (5 photos)
+  jo1: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&q=80&auto=format&fit=crop",
+  jo2: "https://images.unsplash.com/photo-1454942901704-3c44c11b2ad1?w=1000&q=80&auto=format&fit=crop",
+  jo3: "https://images.unsplash.com/photo-1486591038211-a0aacaecc94f?w=1000&q=80&auto=format&fit=crop",
+  jo4: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1000&q=80&auto=format&fit=crop",
+  jo5: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000&q=80&auto=format&fit=crop"
 };
 
 // Themed photo placeholder — background image with zoom-on-hover.
