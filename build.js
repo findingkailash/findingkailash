@@ -26,6 +26,18 @@ for (const file of ['styles.css', 'image-slot.js']) {
   fs.copyFileSync(file, path.join(dist, file));
 }
 
+// Copy public folder recursively
+function copyDir(src, dest) {
+  fs.mkdirSync(dest, { recursive: true });
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    const srcPath = path.join(src, entry.name);
+    const destPath = path.join(dest, entry.name);
+    if (entry.isDirectory()) copyDir(srcPath, destPath);
+    else fs.copyFileSync(srcPath, destPath);
+  }
+}
+copyDir(path.join(__dirname, 'public'), path.join(dist, 'public'));
+
 // Generate dist/index.html — remove Babel standalone, point to compiled JS
 let html = fs.readFileSync('index.html', 'utf8');
 
