@@ -45,7 +45,7 @@ const PHOTOS = {
   ak4: "/public/images/omparvat_1.webp",
   ak5: "/public/images/omparvat_5.webp",
   // gallery — Darma Valley (5 photos)
-  da1: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1000&q=80&auto=format&fit=crop",
+  da1: "public/images/darma_valley.webp",
   da2: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&q=80&auto=format&fit=crop",
   da3: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000&q=80&auto=format&fit=crop",
   da4: "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1000&q=80&auto=format&fit=crop",

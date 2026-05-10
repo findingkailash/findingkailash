@@ -55,6 +55,7 @@ const StickyCTA = () => /*#__PURE__*/React.createElement("a", {
     position: "fixed",
     right: 24,
     bottom: 24,
+    zIndex: 9999,
     borderRadius: 50,
     width: 52,
     height: 52,
