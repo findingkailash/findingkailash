@@ -16,10 +16,16 @@ const Nav = ({ onInquire }) => {
       <div className="wrap nav__row">
         <a href="#top" className="nav__logo">
           <OmPeakIcon size={28} color="var(--ink)" />
-          <span className="display" style={{ fontSize: 20, letterSpacing: "-0.01em" }}>
+          <span
+            className="display"
+            style={{ fontSize: 20, letterSpacing: "-0.01em" }}
+          >
             Finding Kailash
           </span>
-          <span className="devanagari" style={{ fontSize: 13, color: "var(--ink-soft)", marginLeft: 4 }}>
+          <span
+            className="devanagari"
+            style={{ fontSize: 13, color: "var(--ink-soft)", marginLeft: 4 }}
+          >
             खोज
           </span>
         </a>
@@ -32,7 +38,8 @@ const Nav = ({ onInquire }) => {
           <a href="#faq">FAQ</a>
         </div>
         <button className="btn btn--alpen btn--small" onClick={onInquire}>
-          Plan my yatra <i className="fa-solid fa-arrow-right" style={{ fontSize: 15 }} />
+          Plan my yatra{" "}
+          <i className="fa-solid fa-arrow-right" style={{ fontSize: 15 }} />
         </button>
       </div>
     </nav>
@@ -50,7 +57,15 @@ const Hero = ({ onInquire, headline }) => {
       <HeroMountains />
 
       <div className="wrap" style={{ position: "relative", zIndex: 5 }}>
-        <div className="hero__grid" style={{ display: "grid", gridTemplateColumns: "1.15fr 1fr", gap: 56, alignItems: "center" }}>
+        <div
+          className="hero__grid"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.15fr 1fr",
+            gap: 56,
+            alignItems: "center",
+          }}
+        >
           <Reveal>
             <div className="eyebrow" style={{ marginBottom: 22 }}>
               <span style={{ fontSize: 14, lineHeight: 1 }}>🕉</span>
@@ -58,9 +73,15 @@ const Hero = ({ onInquire, headline }) => {
             </div>
             <div
               className="devanagari"
-              style={{ fontSize: 22, color: "var(--ink-2)", marginBottom: 14, fontWeight: 500 }}
+              style={{
+                fontSize: 22,
+                color: "var(--ink-2)",
+                marginBottom: 14,
+                fontWeight: 500,
+              }}
             >
-              यात्रा नहीं, एक अनुभव है… <span style={{ color: "var(--alpen)" }}>🔱</span>
+              यात्रा नहीं, एक अनुभव है…{" "}
+              <span style={{ color: "var(--alpen)" }}>🔱</span>
             </div>
             <h1
               className="display"
@@ -81,35 +102,60 @@ const Hero = ({ onInquire, headline }) => {
                 lineHeight: 1.55,
               }}
             >
-              Soul-stirring expeditions to <strong style={{ color: "var(--ink)" }}>Adi Kailash &amp; Om Parvat</strong> — and across four
-              more sacred valleys of Uttarakhand. Witness the sacred Om carved by nature itself.
+              Soul-stirring expeditions to{" "}
+              <strong style={{ color: "var(--ink)" }}>
+                Adi Kailash &amp; Om Parvat
+              </strong>{" "}
+              — and across four more sacred valleys of Uttarakhand. Witness the
+              sacred Om carved by nature itself.
             </p>
 
             <div className="row" style={{ marginBottom: 36 }}>
               <button className="btn btn--alpen" onClick={onInquire}>
-                Plan my journey <i className="fa-solid fa-arrow-right" style={{ fontSize: 16 }} />
+                Plan my journey{" "}
+                <i
+                  className="fa-solid fa-arrow-right"
+                  style={{ fontSize: 16 }}
+                />
               </button>
-              <a href="tel:+918126980408" className="btn btn--ghost">
-                <i className="fa-solid fa-phone" style={{ fontSize: 15 }} /> +91 81269 80408
+              <a href="tel:+917037478455" className="btn btn--ghost">
+                <i className="fa-solid fa-phone" style={{ fontSize: 15 }} /> +91
+                70374 78455
               </a>
             </div>
 
             <div className="row" style={{ gap: 22 }}>
               <div className="metric">
                 <div className="metric__num">5</div>
-                <div className="metric__label" style={{ color: "var(--ink)" }}>Sacred trails</div>
+                <div className="metric__label" style={{ color: "var(--ink)" }}>
+                  Sacred trails
+                </div>
               </div>
               <div className="metric">
-                <div className="metric__num">8–11</div>
-                <div className="metric__label" style={{ color: "var(--ink)" }}>Day yatras</div>
+                <div className="metric__num">Customisable</div>
+                <div className="metric__label" style={{ color: "var(--ink)" }}>
+                  Day yatras
+                </div>
               </div>
               <div className="metric">
-                <div className="metric__num">5,945<span style={{ fontSize: 18, color: "var(--ink-2)" }}>m</span></div>
-                <div className="metric__label" style={{ color: "var(--ink)" }}>Adi Kailash peak</div>
+                <div className="metric__num">
+                  5,945
+                  <span style={{ fontSize: 18, color: "var(--ink-2)" }}>m</span>
+                </div>
+                <div className="metric__label" style={{ color: "var(--ink)" }}>
+                  Adi Kailash peak
+                </div>
               </div>
               <div className="metric">
-                <div className="metric__num">12<span style={{ fontSize: 18, color: "var(--ink-2)" }}>max</span></div>
-                <div className="metric__label" style={{ color: "var(--ink)" }}>Per group</div>
+                <div className="metric__num">
+                  12
+                  <span style={{ fontSize: 18, color: "var(--ink-2)" }}>
+                    max
+                  </span>
+                </div>
+                <div className="metric__label" style={{ color: "var(--ink)" }}>
+                  Per group
+                </div>
               </div>
             </div>
           </Reveal>
@@ -120,7 +166,12 @@ const Hero = ({ onInquire, headline }) => {
                 src={PHOTOS.hero}
                 alt="Om Parvat at sunrise"
                 lift
-                style={{ width: "100%", aspectRatio: "4/5", borderRadius: 22, boxShadow: "0 30px 60px -20px rgba(0,0,0,0.55)" }}
+                style={{
+                  width: "100%",
+                  aspectRatio: "4/5",
+                  borderRadius: 22,
+                  boxShadow: "0 30px 60px -20px rgba(0,0,0,0.55)",
+                }}
               />
               {/* floating chip */}
               <div
@@ -139,17 +190,32 @@ const Hero = ({ onInquire, headline }) => {
               >
                 <div
                   style={{
-                    width: 38, height: 38, borderRadius: 12,
+                    width: 38,
+                    height: 38,
+                    borderRadius: 12,
                     background: "linear-gradient(135deg, #f2c879, #e0773c)",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    color: "white", fontSize: 18,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "white",
+                    fontSize: 18,
                   }}
                 >
                   🕉
                 </div>
                 <div>
-                  <div style={{ fontSize: 13, fontWeight: 700, color: "var(--ink)" }}>The Om of nature</div>
-                  <div style={{ fontSize: 11.5, color: "var(--ink-soft)" }}>Snow-carved on Om Parvat, 6,191m</div>
+                  <div
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 700,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    The Om of nature
+                  </div>
+                  <div style={{ fontSize: 11.5, color: "var(--ink-soft)" }}>
+                    Snow-carved on Om Parvat, 6,191m
+                  </div>
                 </div>
               </div>
               {/* topright chip */}
@@ -167,7 +233,10 @@ const Hero = ({ onInquire, headline }) => {
                   color: "var(--ink-2)",
                 }}
               >
-                <i className="fa-solid fa-leaf" style={{ fontSize: 14, color: "var(--pine)" }} />
+                <i
+                  className="fa-solid fa-leaf"
+                  style={{ fontSize: 14, color: "var(--pine)" }}
+                />
                 Small-group · permit-included
               </div>
             </div>
@@ -176,7 +245,14 @@ const Hero = ({ onInquire, headline }) => {
 
         {/* destination strip */}
         <Reveal delay={300} style={{ marginTop: 72 }}>
-          <div className="topo" style={{ marginBottom: 18, backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1.2px)" }} />
+          <div
+            className="topo"
+            style={{
+              marginBottom: 18,
+              backgroundImage:
+                "radial-gradient(circle, rgba(255,255,255,0.55) 1px, transparent 1.2px)",
+            }}
+          />
           <div
             className="hero__dest-strip"
             style={{
@@ -199,9 +275,21 @@ const Hero = ({ onInquire, headline }) => {
               ["04", "Manaskhand Circuit", "Jageshwar · Patal Bhuvaneshwar"],
               ["05", "Johar Valley", "Milam · Martoli"],
             ].map(([n, name, sub]) => (
-              <div key={n} style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                <span className="mono" style={{ color: "var(--alpen)", fontSize: 11 }}>{n}</span>
-                <span style={{ color: "#ffffff", fontWeight: 600, fontSize: 13.5 }}>{name}</span>
+              <div
+                key={n}
+                style={{ display: "flex", flexDirection: "column", gap: 2 }}
+              >
+                <span
+                  className="mono"
+                  style={{ color: "var(--alpen)", fontSize: 11 }}
+                >
+                  {n}
+                </span>
+                <span
+                  style={{ color: "#ffffff", fontWeight: 600, fontSize: 13.5 }}
+                >
+                  {name}
+                </span>
                 <span style={{ color: "rgba(255,255,255,0.60)" }}>{sub}</span>
               </div>
             ))}
@@ -223,7 +311,7 @@ const DESTINATIONS = [
     name: "Adi Kailash & Om Parvat",
     hindi: "आदि कैलाश एवं ॐ पर्वत",
     region: "Vyas Valley · Pithoragarh",
-    days: "8 days",
+    days: "5 days",
     altitude: "5,945 m",
     grade: "Moderate",
     blurb:
@@ -284,20 +372,45 @@ const Journeys = ({ onInquire }) => {
   const featured = DESTINATIONS.find((d) => d.featured);
   const others = DESTINATIONS.filter((d) => !d.featured);
   return (
-    <section className="section bg-snow" id="journeys" data-screen-label="Journeys">
+    <section
+      className="section bg-snow"
+      id="journeys"
+      data-screen-label="Journeys"
+    >
       <div className="wrap">
         <Reveal>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, gap: 28, flexWrap: "wrap" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "flex-end",
+              marginBottom: 48,
+              gap: 28,
+              flexWrap: "wrap",
+            }}
+          >
             <div style={{ maxWidth: 620 }}>
-              <div className="eyebrow" style={{ marginBottom: 18 }}>The trails</div>
-              <h2 className="display" style={{ fontSize: "clamp(32px, 4vw, 52px)", margin: 0 }}>
-                Five sacred trails.<br />
-                <span style={{ color: "var(--alpen-deep)" }}>One unforgettable yatra.</span>
+              <div className="eyebrow" style={{ marginBottom: 18 }}>
+                The trails
+              </div>
+              <h2
+                className="display"
+                style={{ fontSize: "clamp(32px, 4vw, 52px)", margin: 0 }}
+              >
+                Five sacred trails.
+                <br />
+                <span style={{ color: "var(--alpen-deep)" }}>
+                  One unforgettable yatra.
+                </span>
               </h2>
             </div>
-            <p className="text-muted" style={{ maxWidth: 380, fontSize: 15, lineHeight: 1.65 }}>
-              We run small expeditions across five corners of the Kumaon Himalaya. Adi Kailash &amp; Om Parvat is our flagship — the rest are
-              quieter, equally beautiful pieces of the same map.
+            <p
+              className="text-muted"
+              style={{ maxWidth: 380, fontSize: 15, lineHeight: 1.65 }}
+            >
+              We run small expeditions across five corners of the Kumaon
+              Himalaya. Adi Kailash &amp; Om Parvat is our flagship — the rest
+              are quieter, equally beautiful pieces of the same map.
             </p>
           </div>
         </Reveal>
@@ -315,7 +428,10 @@ const Journeys = ({ onInquire }) => {
               minHeight: 480,
             }}
           >
-            <div className="featured-card__img" style={{ position: "relative", minHeight: 440 }}>
+            <div
+              className="featured-card__img"
+              style={{ position: "relative", minHeight: 440 }}
+            >
               <Photo
                 src={PHOTOS[featured.id] || PHOTOS.hero}
                 alt={featured.name}
@@ -323,46 +439,113 @@ const Journeys = ({ onInquire }) => {
               />
               <div
                 style={{
-                  position: "absolute", top: 18, left: 18,
+                  position: "absolute",
+                  top: 18,
+                  left: 18,
                   padding: "5px 12px",
-                  background: "var(--alpen)", color: "white",
-                  borderRadius: 999, fontSize: 11, fontWeight: 700,
-                  letterSpacing: "0.12em", textTransform: "uppercase",
+                  background: "var(--alpen)",
+                  color: "white",
+                  borderRadius: 999,
+                  fontSize: 11,
+                  fontWeight: 700,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
                 }}
               >
                 {featured.badge}
               </div>
             </div>
-            <div className="featured-card__body" style={{ padding: "44px 44px", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 24 }}>
+            <div
+              className="featured-card__body"
+              style={{
+                padding: "44px 44px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                gap: 24,
+              }}
+            >
               <div>
-                <div className="mono" style={{ color: "var(--alpen-deep)", fontSize: 12, marginBottom: 12 }}>{featured.no} · {featured.region}</div>
-                <h3 className="display" style={{ fontSize: 38, margin: "0 0 6px" }}>{featured.name}</h3>
-                <div className="devanagari" style={{ color: "var(--ink-soft)", fontSize: 18, marginBottom: 22 }}>
+                <div
+                  className="mono"
+                  style={{
+                    color: "var(--alpen-deep)",
+                    fontSize: 12,
+                    marginBottom: 12,
+                  }}
+                >
+                  {featured.no} · {featured.region}
+                </div>
+                <h3
+                  className="display"
+                  style={{ fontSize: 38, margin: "0 0 6px" }}
+                >
+                  {featured.name}
+                </h3>
+                <div
+                  className="devanagari"
+                  style={{
+                    color: "var(--ink-soft)",
+                    fontSize: 18,
+                    marginBottom: 22,
+                  }}
+                >
                   {featured.hindi}
                 </div>
-                <p style={{ color: "var(--ink-soft)", fontSize: 15.5, lineHeight: 1.7, margin: 0 }}>
+                <p
+                  style={{
+                    color: "var(--ink-soft)",
+                    fontSize: 15.5,
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
                   {featured.blurb}
                 </p>
               </div>
 
               <div>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18, padding: "20px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)", marginBottom: 22 }}>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(3, 1fr)",
+                    gap: 18,
+                    padding: "20px 0",
+                    borderTop: "1px solid var(--line)",
+                    borderBottom: "1px solid var(--line)",
+                    marginBottom: 22,
+                  }}
+                >
                   <div>
                     <div className="metric__label">Duration</div>
-                    <div style={{ fontWeight: 700, marginTop: 4 }}>{featured.days}</div>
+                    <div style={{ fontWeight: 700, marginTop: 4 }}>
+                      {featured.days}
+                    </div>
                   </div>
                   <div>
                     <div className="metric__label">Max altitude</div>
-                    <div style={{ fontWeight: 700, marginTop: 4 }}>{featured.altitude}</div>
+                    <div style={{ fontWeight: 700, marginTop: 4 }}>
+                      {featured.altitude}
+                    </div>
                   </div>
                   <div>
                     <div className="metric__label">Grade</div>
-                    <div style={{ fontWeight: 700, marginTop: 4 }}>{featured.grade}</div>
+                    <div style={{ fontWeight: 700, marginTop: 4 }}>
+                      {featured.grade}
+                    </div>
                   </div>
                 </div>
                 <div className="row">
-                  <a href="#itinerary" className="btn">View itinerary <i className="fa-solid fa-arrow-right" style={{ fontSize: 15 }} /></a>
-                  <button className="btn btn--ghost" onClick={onInquire}>Inquire</button>
+                  <a href="#itinerary" className="btn">
+                    View itinerary{" "}
+                    <i
+                      className="fa-solid fa-arrow-right"
+                      style={{ fontSize: 15 }}
+                    />
+                  </a>
+                  <button className="btn btn--ghost" onClick={onInquire}>
+                    Inquire
+                  </button>
                 </div>
               </div>
             </div>
@@ -370,30 +553,107 @@ const Journeys = ({ onInquire }) => {
         </Reveal>
 
         {/* Other 4 cards */}
-        <div className="grid" style={{ gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}>
+        <div
+          className="grid"
+          style={{ gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }}
+        >
           {others.map((d, i) => (
             <Reveal delay={i * 80} key={d.id}>
-              <div className="card" style={{ height: "100%", display: "flex", flexDirection: "column" }}>
+              <div
+                className="card"
+                style={{
+                  height: "100%",
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
                 <Photo
                   src={PHOTOS[d.id] || PHOTOS.g1}
                   alt={d.name}
                   style={{ width: "100%", aspectRatio: "4/3" }}
                 />
-                <div style={{ padding: 22, display: "flex", flexDirection: "column", flex: 1, gap: 12 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                    <span className="mono" style={{ color: "var(--alpen-deep)", fontSize: 11 }}>{d.no}</span>
-                    <span className="chip" style={{ fontSize: 11, padding: "3px 9px" }}>{d.grade}</span>
+                <div
+                  style={{
+                    padding: 22,
+                    display: "flex",
+                    flexDirection: "column",
+                    flex: 1,
+                    gap: 12,
+                  }}
+                >
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
+                    <span
+                      className="mono"
+                      style={{ color: "var(--alpen-deep)", fontSize: 11 }}
+                    >
+                      {d.no}
+                    </span>
+                    <span
+                      className="chip"
+                      style={{ fontSize: 11, padding: "3px 9px" }}
+                    >
+                      {d.grade}
+                    </span>
                   </div>
                   <div>
-                    <div className="display" style={{ fontSize: 22, fontWeight: 700, lineHeight: 1.1 }}>{d.name}</div>
-                    <div className="devanagari" style={{ color: "var(--ink-soft)", fontSize: 13.5, marginTop: 4 }}>{d.hindi}</div>
+                    <div
+                      className="display"
+                      style={{ fontSize: 22, fontWeight: 700, lineHeight: 1.1 }}
+                    >
+                      {d.name}
+                    </div>
+                    <div
+                      className="devanagari"
+                      style={{
+                        color: "var(--ink-soft)",
+                        fontSize: 13.5,
+                        marginTop: 4,
+                      }}
+                    >
+                      {d.hindi}
+                    </div>
                   </div>
-                  <p style={{ color: "var(--ink-soft)", fontSize: 13.5, lineHeight: 1.6, margin: 0, flex: 1 }}>
+                  <p
+                    style={{
+                      color: "var(--ink-soft)",
+                      fontSize: 13.5,
+                      lineHeight: 1.6,
+                      margin: 0,
+                      flex: 1,
+                    }}
+                  >
                     {d.blurb}
                   </p>
-                  <div style={{ display: "flex", justifyContent: "space-between", paddingTop: 12, borderTop: "1px solid var(--line)", fontSize: 12, color: "var(--ink-2)" }}>
-                    <span><i className="fa-solid fa-calendar-days" style={{ fontSize: 12 }} /> {d.days}</span>
-                    <span><i className="fa-solid fa-mountain" style={{ fontSize: 12 }} /> {d.altitude}</span>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      paddingTop: 12,
+                      borderTop: "1px solid var(--line)",
+                      fontSize: 12,
+                      color: "var(--ink-2)",
+                    }}
+                  >
+                    <span>
+                      <i
+                        className="fa-solid fa-calendar-days"
+                        style={{ fontSize: 12 }}
+                      />{" "}
+                      {d.days}
+                    </span>
+                    <span>
+                      <i
+                        className="fa-solid fa-mountain"
+                        style={{ fontSize: 12 }}
+                      />{" "}
+                      {d.altitude}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -415,40 +675,70 @@ const Pickup = ({ onInquire }) => {
       sub: "Closest base camp",
       tag: "Most affordable",
       color: "var(--pine)",
-      from: "₹ 22,500",
-      drive: "Same-day pickup, ~3 hrs to Dharchula",
-      perks: ["Shortest drive day", "Best for return trekkers", "Lowest expedition cost"],
+      comfort: "₹ 25,000",
+      premium: "₹ 30,000",
+      drive: "Same-day pickup, ~5 hrs to Gunji / Nabi",
+      perks: [
+        "Shortest drive day",
+        "Best for return trekkers",
+        "Lowest expedition cost",
+      ],
     },
     {
-      city: "Kathgodam",
-      sub: "Rail-head pickup",
+      city: "Haldwani",
+      sub: "Rail-head pickup · Kathgodam stn",
       tag: "Most popular",
       color: "var(--alpen)",
-      from: "₹ 28,500",
-      drive: "Train from Delhi (overnight), then 8 hrs road",
-      perks: ["Easy from any metro by rail", "Stop at Almora / Chaukori", "Balanced cost & comfort"],
+      comfort: "₹ 32,000",
+      premium: "₹ 51,000",
+      drive: "Train from any metro (overnight), ~10 hrs road",
+      perks: [
+        "Easy from any city by rail",
+        "Stop at Almora / Chaukori",
+        "Balanced cost & comfort",
+      ],
     },
     {
       city: "Delhi",
       sub: "Door-to-door from the capital",
       tag: "Premium ease",
       color: "var(--sky-deep)",
-      from: "₹ 34,500",
+      comfort: "₹ 35,000",
+      premium: "₹ 55,000",
       drive: "Full transfer included from Delhi NCR",
-      perks: ["No train booking to manage", "Flexible departure window", "Includes acclimatisation halt"],
+      perks: [
+        "No train booking to manage",
+        "Flexible departure window",
+        "Includes acclimatisation halt",
+      ],
     },
   ];
   return (
-    <section className="section" id="pickup" data-screen-label="Pickup pricing" style={{ paddingTop: 0 }}>
+    <section
+      className="section"
+      id="pickup"
+      data-screen-label="Pickup pricing"
+      style={{ paddingTop: 0 }}
+    >
       <div className="wrap">
         <Reveal>
           <div style={{ marginBottom: 40 }}>
-            <div className="eyebrow" style={{ marginBottom: 14 }}>Pickup &amp; pricing</div>
-            <h2 className="display" style={{ fontSize: "clamp(28px, 3.4vw, 44px)", margin: 0, maxWidth: 760 }}>
+            <div className="eyebrow" style={{ marginBottom: 14 }}>
+              Pickup &amp; pricing
+            </div>
+            <h2
+              className="display"
+              style={{
+                fontSize: "clamp(28px, 3.4vw, 44px)",
+                margin: 0,
+                maxWidth: 760,
+              }}
+            >
               Three pickup points. Pick the one that suits your start.
             </h2>
             <p className="text-muted" style={{ maxWidth: 580, marginTop: 12 }}>
-              Per-person, ex-pickup-point, twin-share. Final price varies by group size, season &amp; package tier.
+              Per-person, ex-pickup-point, twin-share. Final price varies by
+              group size, season &amp; package tier.
             </p>
           </div>
         </Reveal>
@@ -467,10 +757,29 @@ const Pickup = ({ onInquire }) => {
                   borderTop: `4px solid ${t.color}`,
                 }}
               >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "flex-start",
+                  }}
+                >
                   <div>
-                    <div className="display" style={{ fontSize: 28, fontWeight: 700 }}>{t.city}</div>
-                    <div style={{ color: "var(--ink-soft)", fontSize: 13, marginTop: 2 }}>{t.sub}</div>
+                    <div
+                      className="display"
+                      style={{ fontSize: 28, fontWeight: 700 }}
+                    >
+                      {t.city}
+                    </div>
+                    <div
+                      style={{
+                        color: "var(--ink-soft)",
+                        fontSize: 13,
+                        marginTop: 2,
+                      }}
+                    >
+                      {t.sub}
+                    </div>
                   </div>
                   <span
                     style={{
@@ -489,19 +798,66 @@ const Pickup = ({ onInquire }) => {
                   </span>
                 </div>
                 <div>
-                  <div className="metric__label">Adi Kailash · from</div>
-                  <div className="display" style={{ fontSize: 38, fontWeight: 700, marginTop: 4 }}>
-                    {t.from}
-                    <span style={{ fontSize: 14, color: "var(--ink-soft)", fontWeight: 500, marginLeft: 6 }}>/ person</span>
+                  <div className="metric__label" style={{ marginBottom: 6 }}>Adi Kailash · per person</div>
+                  <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                      <span
+                        className="display"
+                        style={{ fontSize: 32, fontWeight: 700 }}
+                      >
+                        {t.comfort}
+                      </span>
+                      <span style={{ fontSize: 13, color: "var(--ink-soft)" }}>Comfort</span>
+                    </div>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
+                      <span
+                        className="display"
+                        style={{ fontSize: 22, fontWeight: 700, color: "var(--alpen-deep)" }}
+                      >
+                        {t.premium}
+                      </span>
+                      <span style={{ fontSize: 13, color: "var(--ink-soft)" }}>Premium</span>
+                    </div>
                   </div>
                 </div>
-                <div style={{ fontSize: 13, color: "var(--ink-soft)", paddingBottom: 16, borderBottom: "1px solid var(--line)" }}>
+                <div
+                  style={{
+                    fontSize: 13,
+                    color: "var(--ink-soft)",
+                    paddingBottom: 16,
+                    borderBottom: "1px solid var(--line)",
+                  }}
+                >
                   {t.drive}
                 </div>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 8, flex: 1 }}>
+                <ul
+                  style={{
+                    listStyle: "none",
+                    padding: 0,
+                    margin: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                    flex: 1,
+                  }}
+                >
                   {t.perks.map((p) => (
-                    <li key={p} style={{ display: "flex", alignItems: "center", gap: 10, fontSize: 13.5, color: "var(--ink-2)" }}>
-                      <span style={{ color: t.color, display: "inline-flex" }}><i className="fa-solid fa-check" style={{ fontSize: 14 }} /></span>
+                    <li
+                      key={p}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontSize: 13.5,
+                        color: "var(--ink-2)",
+                      }}
+                    >
+                      <span style={{ color: t.color, display: "inline-flex" }}>
+                        <i
+                          className="fa-solid fa-check"
+                          style={{ fontSize: 14 }}
+                        />
+                      </span>
                       {p}
                     </li>
                   ))}
@@ -511,7 +867,11 @@ const Pickup = ({ onInquire }) => {
                   onClick={onInquire}
                   style={{ marginTop: "auto", justifyContent: "center" }}
                 >
-                  Choose {t.city} <i className="fa-solid fa-arrow-right" style={{ fontSize: 14 }} />
+                  Choose {t.city}{" "}
+                  <i
+                    className="fa-solid fa-arrow-right"
+                    style={{ fontSize: 14 }}
+                  />
                 </button>
               </div>
             </Reveal>
