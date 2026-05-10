@@ -165,6 +165,7 @@ const Hero = ({ onInquire, headline }) => {
               <Photo
                 src={PHOTOS.hero}
                 alt="Om Parvat at sunrise"
+                eager
                 lift
                 style={{
                   width: "100%",

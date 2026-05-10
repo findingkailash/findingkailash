@@ -177,8 +177,24 @@ image-slot {
   background-size: cover;
   background-position: center;
   transform: scale(1);
-  transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1), filter 600ms ease;
+  transition: transform 900ms cubic-bezier(0.2, 0.8, 0.2, 1),
+              filter 600ms ease,
+              opacity 600ms ease;
   will-change: transform;
+}
+.photo__img--skeleton {
+  opacity: 0;
+  background-image: none !important;
+  background-color: #d4cfc9;
+  animation: photo-shimmer 1.6s ease-in-out infinite;
+}
+.photo__img--ready {
+  opacity: 1;
+}
+@keyframes photo-shimmer {
+  0%   { background-color: #d4cfc9; }
+  50%  { background-color: #e8e3dd; }
+  100% { background-color: #d4cfc9; }
 }
 .photo:hover .photo__img,
 .photo:focus-within .photo__img {
