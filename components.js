@@ -24,26 +24,26 @@ const FK_ImageSlot = ({
 // these for the user's own image-slot setup later.
 const PHOTOS = {
   // hero
-  hero: "/public/images/hero.jpg",
+  hero: "/public/images/hero.webp",
   // 5 destinations
-  adikailash: "/public/images/omparvat_2.jpg",
-  darma: "/public/images/darma_valley.jpg",
+  adikailash: "/public/images/omparvat_2.webp",
+  darma: "/public/images/darma_valley.webp",
   munsiyari: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&auto=format&fit=crop",
   manaskhand: "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80&auto=format&fit=crop",
   johar: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&q=80&auto=format&fit=crop",
   // founders portrait
   founders: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=1000&q=80&auto=format&fit=crop",
   // temples (manaskhand circuit)
-  kainchi: "public/images/kaichi_dham.jpg",
+  kainchi: "public/images/kaichi_dham.webp",
   chitai: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=900&q=80&auto=format&fit=crop",
   jageshwar: "https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=900&q=80&auto=format&fit=crop",
   patal: "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80&auto=format&fit=crop",
   // gallery — Adi Kailash & Om Parvat (5 photos)
-  ak1: "/public/images/omparvat_4.jpg",
-  ak2: "/public/images/omparvat_2.jpg",
-  ak3: "/public/images/omparvat_3.jpg",
-  ak4: "/public/images/omparvat_1.jpg",
-  ak5: "/public/images/omparvat_5.jpg",
+  ak1: "/public/images/omparvat_4.webp",
+  ak2: "/public/images/omparvat_2.webp",
+  ak3: "/public/images/omparvat_3.webp",
+  ak4: "/public/images/omparvat_1.webp",
+  ak5: "/public/images/omparvat_5.webp",
   // gallery — Darma Valley (5 photos)
   da1: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1000&q=80&auto=format&fit=crop",
   da2: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&q=80&auto=format&fit=crop",
@@ -70,27 +70,59 @@ const PHOTOS = {
   jo5: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1000&q=80&auto=format&fit=crop"
 };
 
-// Themed photo placeholder — background image with zoom-on-hover.
-// Use anywhere you'd otherwise drop an <image-slot>.
+// Themed photo placeholder — lazy-loads via IntersectionObserver.
+// Pass eager={true} for above-the-fold images (e.g. hero) to skip lazy loading.
 const Photo = ({
   src,
   alt,
   caption,
   style,
   lift = false,
+  eager = false,
   className = "",
   children
 }) => {
+  const ref = React.useRef(null);
+  const [imgSrc, setImgSrc] = React.useState(null);
+  const [ready, setReady] = React.useState(false);
+  React.useEffect(() => {
+    if (!src) return;
+    const load = () => {
+      const img = new Image();
+      img.onload = () => {
+        setImgSrc(src);
+        setReady(true);
+      };
+      img.src = src;
+    };
+    if (eager) {
+      load();
+      return;
+    }
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        observer.disconnect();
+        load();
+      }
+    }, {
+      rootMargin: "200px"
+    });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [src, eager]);
   return /*#__PURE__*/React.createElement("div", {
+    ref: ref,
     className: `photo ${lift ? "photo--lift" : ""} ${className}`,
     style: style,
     role: "img",
     "aria-label": alt || caption || ""
   }, /*#__PURE__*/React.createElement("div", {
-    className: "photo__img",
-    style: {
-      backgroundImage: `url(${src})`
-    }
+    className: `photo__img ${ready ? "photo__img--ready" : "photo__img--skeleton"}`,
+    style: imgSrc ? {
+      backgroundImage: `url(${imgSrc})`
+    } : {}
   }), /*#__PURE__*/React.createElement("div", {
     className: "photo__shade"
   }), caption && /*#__PURE__*/React.createElement("div", {

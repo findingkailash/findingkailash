@@ -216,6 +216,7 @@ const Hero = ({
   }, /*#__PURE__*/React.createElement(Photo, {
     src: PHOTOS.hero,
     alt: "Om Parvat at sunrise",
+    eager: true,
     lift: true,
     style: {
       width: "100%",
