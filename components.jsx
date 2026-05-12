@@ -37,8 +37,7 @@ const PHOTOS = {
 
   // temples (manaskhand circuit)
   kainchi: "public/images/kaichi_dham.webp",
-  chitai:
-    "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=900&q=80&auto=format&fit=crop",
+  chitai: "public/images/chitai_golu_devta.webp",
   jageshwar: "public/images/jageshwar_dham.webp",
   patal: "public/images/patal_bhuvneshwar.webp",
 
