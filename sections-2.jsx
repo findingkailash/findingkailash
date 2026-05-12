@@ -1200,6 +1200,11 @@ const Booking = React.forwardRef((props, ref) => {
   const submit = async (ev) => {
     ev.preventDefault();
     if (!validate()) return;
+    const hCaptchaToken = ev.target.querySelector('textarea[name="h-captcha-response"]')?.value;
+    if (!hCaptchaToken) {
+      setSendError("Please complete the captcha.");
+      return;
+    }
     setSending(true);
     setSendError(null);
     try {
@@ -1213,6 +1218,7 @@ const Booking = React.forwardRef((props, ref) => {
           access_key: "e51aac0a-89d2-49e9-a78c-bbed4790dee4",
           subject: `Finding Kailash inquiry — ${form.destination} (${form.month || "flexible"})`,
           from_name: form.name,
+          "h-captcha-response": hCaptchaToken,
           ...form,
         }),
       });
@@ -1509,6 +1515,9 @@ const Booking = React.forwardRef((props, ref) => {
                       onChange={set("msg")}
                       placeholder="Dietary, fitness concerns, anniversary trip, photography focus…"
                     />
+                  </div>
+                  <div className="field" style={{ gridColumn: "1 / -1" }}>
+                    <div className="h-captcha" data-captcha="true"></div>
                   </div>
                 </div>
                 <div
