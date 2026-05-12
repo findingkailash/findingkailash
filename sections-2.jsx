@@ -1183,6 +1183,20 @@ const Booking = React.forwardRef((props, ref) => {
   const [submitted, setSubmitted] = React.useState(false);
   const [sending, setSending] = React.useState(false);
   const [sendError, setSendError] = React.useState(null);
+  const hcaptchaDiv = React.useRef(null);
+  const hcaptchaId = React.useRef(null);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.hcaptcha && hcaptchaDiv.current && hcaptchaId.current === null) {
+        hcaptchaId.current = window.hcaptcha.render(hcaptchaDiv.current, {
+          sitekey: "50b2fe65-b00b-4b9e-ad62-3ba471098be2",
+        });
+        clearInterval(interval);
+      }
+    }, 200);
+    return () => clearInterval(interval);
+  }, []);
 
   const set = (k) => (e) => setForm((s) => ({ ...s, [k]: e.target.value }));
 
@@ -1200,7 +1214,9 @@ const Booking = React.forwardRef((props, ref) => {
   const submit = async (ev) => {
     ev.preventDefault();
     if (!validate()) return;
-    const hCaptchaToken = ev.target.querySelector('textarea[name="h-captcha-response"]')?.value;
+    const hCaptchaToken = hcaptchaId.current !== null
+      ? window.hcaptcha.getResponse(hcaptchaId.current)
+      : "";
     if (!hCaptchaToken) {
       setSendError("Please complete the captcha.");
       return;
@@ -1225,6 +1241,7 @@ const Booking = React.forwardRef((props, ref) => {
       const data = await res.json();
       if (data.success) {
         setSubmitted(true);
+        if (hcaptchaId.current !== null) window.hcaptcha.reset(hcaptchaId.current);
       } else {
         setSendError(
           "Something went wrong. Please try again or reach us on WhatsApp.",
@@ -1517,7 +1534,7 @@ const Booking = React.forwardRef((props, ref) => {
                     />
                   </div>
                   <div className="field" style={{ gridColumn: "1 / -1" }}>
-                    <div className="h-captcha" data-captcha="true"></div>
+                    <div ref={hcaptchaDiv}></div>
                   </div>
                 </div>
                 <div
