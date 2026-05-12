@@ -640,10 +640,10 @@ const GalleryCarousel = ({ photos, destName }) => {
 
 const DEST_GALLERY = {
   adikailash: [PHOTOS.ak1, PHOTOS.ak2, PHOTOS.ak3, PHOTOS.ak4, PHOTOS.ak5],
-  darma:       [PHOTOS.da1, PHOTOS.da2, PHOTOS.da3, PHOTOS.da4, PHOTOS.da5],
-  munsiyari:   [PHOTOS.mu1, PHOTOS.mu2, PHOTOS.mu3, PHOTOS.mu4, PHOTOS.mu5],
-  manaskhand:  [PHOTOS.ma1, PHOTOS.ma2, PHOTOS.ma3, PHOTOS.ma4, PHOTOS.ma5],
-  johar:       [PHOTOS.jo1, PHOTOS.jo2, PHOTOS.jo3, PHOTOS.jo4, PHOTOS.jo5],
+  darma: [PHOTOS.da1, PHOTOS.da2, PHOTOS.da3, PHOTOS.da4, PHOTOS.da5],
+  munsiyari: [PHOTOS.mu1, PHOTOS.mu2, PHOTOS.mu3, PHOTOS.mu4, PHOTOS.mu5],
+  manaskhand: [PHOTOS.ma1, PHOTOS.ma2, PHOTOS.ma3, PHOTOS.ma4, PHOTOS.ma5],
+  johar: [PHOTOS.jo1, PHOTOS.jo2, PHOTOS.jo3, PHOTOS.jo4, PHOTOS.jo5],
 };
 
 const Gallery = () => {
@@ -1181,6 +1181,8 @@ const Booking = React.forwardRef((props, ref) => {
   });
   const [errors, setErrors] = React.useState({});
   const [submitted, setSubmitted] = React.useState(false);
+  const [sending, setSending] = React.useState(false);
+  const [sendError, setSendError] = React.useState(null);
 
   const set = (k) => (e) => setForm((s) => ({ ...s, [k]: e.target.value }));
 
@@ -1195,10 +1197,40 @@ const Booking = React.forwardRef((props, ref) => {
     return Object.keys(e).length === 0;
   };
 
-  const submit = (ev) => {
+  const submit = async (ev) => {
     ev.preventDefault();
     if (!validate()) return;
-    setSubmitted(true);
+    setSending(true);
+    setSendError(null);
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e51aac0a-89d2-49e9-a78c-bbed4790dee4",
+          subject: `Finding Kailash inquiry — ${form.destination} (${form.month || "flexible"})`,
+          from_name: form.name,
+          ...form,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        setSendError(
+          "Something went wrong. Please try again or reach us on WhatsApp.",
+        );
+      }
+    } catch {
+      setSendError(
+        "Network error. Please check your connection and try again.",
+      );
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -1493,14 +1525,35 @@ const Booking = React.forwardRef((props, ref) => {
                     No deposit at this stage. We'll send a personalised quote
                     first.
                   </span>
-                  <button type="submit" className="btn btn--alpen">
-                    Send inquiry{" "}
-                    <i
-                      className="fa-solid fa-arrow-right"
-                      style={{ fontSize: 15 }}
-                    />
+                  <button
+                    type="submit"
+                    className="btn btn--alpen"
+                    disabled={sending}
+                  >
+                    {sending ? (
+                      "Sending…"
+                    ) : (
+                      <>
+                        Send inquiry{" "}
+                        <i
+                          className="fa-solid fa-arrow-right"
+                          style={{ fontSize: 15 }}
+                        />
+                      </>
+                    )}
                   </button>
                 </div>
+                {sendError && (
+                  <p
+                    style={{
+                      color: "var(--error, #c0392b)",
+                      fontSize: 13,
+                      marginTop: 12,
+                    }}
+                  >
+                    {sendError}
+                  </p>
+                )}
               </form>
             )}
           </Reveal>
