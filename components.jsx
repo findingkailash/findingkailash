@@ -39,10 +39,8 @@ const PHOTOS = {
   kainchi: "public/images/kaichi_dham.webp",
   chitai:
     "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=900&q=80&auto=format&fit=crop",
-  jageshwar:
-    "https://images.unsplash.com/photo-1612538498456-e861df91d4d0?w=900&q=80&auto=format&fit=crop",
-  patal:
-    "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=900&q=80&auto=format&fit=crop",
+  jageshwar: "public/images/jageshwar_dham.webp",
+  patal: "public/images/patal_bhuvneshwar.webp",
 
   // gallery — Adi Kailash & Om Parvat (5 photos)
   ak1: "/public/images/omparvat_4.webp",
